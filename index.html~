@@ -14,7 +14,7 @@
   </head>
   <body style="font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;">
 
-<div class=center>
+<div class=outer>
 <div class=container>
   <div class=square>
     <button id=a00> </button><button id=a01> </button><button id=a02> </button><button id=a03> </button><button id=a04> </button><br>
@@ -146,8 +146,6 @@
   <div class=newline>
     <br>
   </div>
-
-
 </div>
 
 <!-- The Modal Dialogbox selecting pawn replacement -->
@@ -171,8 +169,11 @@
   </div>
 </div>
 <br><br><hr>
+<div>
+To get the numbering of the sites handled I had to use my labeling machine.
+<a href="./img/visualAids.jpg"><img src="./img/visualAids.jpg
     <a href="https://github.com/braindef/happyCubeSolver.js">https://github.com/braindef/happyCubeSolver.js</a>
-
+</div>
   </body>
 
 
