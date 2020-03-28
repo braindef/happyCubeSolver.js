@@ -47,7 +47,7 @@ function fillHtmlSquare(square, placement)
     if (debug) console.log(field);
     if (dec2bin(square[0]).charAt(j) == "0") document.getElementById(field).style.backgroundColor = "white";
     else
-      document.getElementById(field).style.backgroundColor = "gray";
+      document.getElementById(field).style.backgroundColor = "#afdde9";
   }
 
   for (var j = 0; j < 5; j++)
@@ -55,14 +55,14 @@ function fillHtmlSquare(square, placement)
     field = placement+(4-j)+"0";
     if (dec2bin(square[1]).charAt(j) == "0") document.getElementById(field).style.backgroundColor = "white";
     else
-      document.getElementById(field).style.backgroundColor = "gray";
+      document.getElementById(field).style.backgroundColor = "#afdde9";
   }
 
   for (var j = 0; j < 5; j++)
   {
     if (dec2bin(square[2]).charAt(j) == "0") document.getElementById(placement+"4"+(4-j)).style.backgroundColor = "white";
     else
-      document.getElementById(placement+"4"+(4-j)).style.backgroundColor = "gray";
+      document.getElementById(placement+"4"+(4-j)).style.backgroundColor = "#afdde9";
   }
 
   for (var j = 0; j < 5; j++)
@@ -71,7 +71,7 @@ function fillHtmlSquare(square, placement)
     if (debug) console.log(field);
     if (dec2bin(square[3]).charAt(j) == "0") document.getElementById(field).style.backgroundColor = "white";
     else
-      document.getElementById(field).style.backgroundColor = "gray";
+      document.getElementById(field).style.backgroundColor = "#afdde9";
   }
 
 }
