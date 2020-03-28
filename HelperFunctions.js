@@ -33,7 +33,7 @@ function fillHtmlSquare(square, placement)
   for (var j = 0; j < 5; j++)
   {
     var field = placement+"0"+j;
-    console.log(field);
+    if (debug) console.log(field);
     if (dec2bin(square[0]).charAt(j) == "0") document.getElementById(field).style.backgroundColor = "white";
     else
       document.getElementById(field).style.backgroundColor = "gray";
@@ -57,7 +57,7 @@ function fillHtmlSquare(square, placement)
   for (var j = 0; j < 5; j++)
   {
     field = placement+j+"4";
-    console.log(field);
+    if (debug) console.log(field);
     if (dec2bin(square[3]).charAt(j) == "0") document.getElementById(field).style.backgroundColor = "white";
     else
       document.getElementById(field).style.backgroundColor = "gray";
