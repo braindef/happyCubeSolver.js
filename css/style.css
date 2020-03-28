@@ -6,8 +6,8 @@ div {
 }
 
 button, input {
-  width:50;
-  height:50;
+  width:40px;
+  height:40px;
   border: none;
   padding: 0;  /*needed for ios iphone ipad*/ 
   text-align: center;
@@ -39,12 +39,25 @@ button.lost {
   }
 }
 
-div.float {
-  float: left;
-  width: 20%;
-  margin-right: 10px;
+
+div.container {
+  position: relative;
 }
 
-div {
-  margin: 20px;
+div.square {
+  position: relative;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+div.newline {
+  clear: both;
+
+}
+
+div.container {
+  width: 100%;
 }
