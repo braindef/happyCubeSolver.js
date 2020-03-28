@@ -45,13 +45,13 @@ function load(color)
   {
     changeFieldColor("#ffff00", "button");
   
-    selected = green;
+    selected = yellow;
   }
   if (color == "orange")
   {
     changeFieldColor("#ffa20b", "button");
   
-    selected = green;
+    selected = orange;
   }
   if (color == "red")
   {
@@ -63,7 +63,7 @@ function load(color)
   {
     changeFieldColor("#ff7cff", "button");
   
-    selected = red;
+    selected = purple;
   }
 
     changeFieldColor("#afdde9", "#blue");

@@ -12,7 +12,7 @@ fields = [["f00", "f01", "f02", "f03", "f04"],
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-  changeFieldColor("#fafafa", "button");
+  changeFieldColor("#afafaf", "button");
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
     changeFieldColor("#ffff00", "#yellow");
