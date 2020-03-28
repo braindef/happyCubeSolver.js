@@ -136,6 +136,73 @@ function solveCube(cube)
                                           if ( squareE[0] % 2 == 1) corner3++;
 
                                           if (corner3 == 1)
+                                          {
+                                            for (var v = 0; v < 6; v++)
+                                            {
+                                            if (end) break;
+
+                                            if (v == i) continue;
+                                            if (v == j) continue;
+                                            if (v == m) continue;
+                                            if (v == p) continue;
+                                            if (v == s) continue;
+                              
+                                            for (var w = 0; w < 2; w++)
+                                            {
+                                              if (end) break;
+
+                                              flippedSquareF = cube[v].slice();
+                                              if (w == 1)
+                                                flippedSquareF = flipSquare(cube[v]);
+                                              for (var x = 0; x < 4; x++)
+                                              {
+                                                if (end) break;
+                                  
+                                                squareF = rotateSquare(flippedSquareF, x);
+                                                if ( (checkEdgeTree(squareF[0], squareC[2])) &&
+                                                     (checkEdgeTree(squareF[1], squareB[2])) &&
+                                                     (checkEdgeTree(squareF[2], squareE[2])) &&
+                                                     (checkEdgeTree(squareF[3], squareD[2])) )
+                                  {
+                                    //check if the corner0 has exactly one of the three possible fields from the three squares
+                                    corner0 = 0;
+                                    if ( squareA[2] % 2 == 1 ) corner0++;
+                                    if ( squareB[0] % 2 == 1 ) corner0++;
+                                    if ( squareC[1] % 2 == 1 ) corner0++;
+                                    //console.log("A1: " + dec2bin(squareA[1]));
+                                    //console.log("B3: " + dec2bin(squareB[3]));
+                                    //console.log("C1: " + dec2bin(squareC[0]));
+                                    //console.log(corner0);
+                                    if (corner0 == 1)
+                                    {
+                                      corner1 = 0;
+                                      if ( squareA[3] % 2 == 1) corner1++;
+                                      if ( squareC[0] % 2 == 1) corner1++;
+                                      if ( squareD[1] % 2 == 1) corner1++;
+                                    //console.log("A3: " + dec2bin(squareA[3]));
+                                    //console.log("C0: " + dec2bin(squareC[0]));
+                                    //console.log("D1: " + dec2bin(squareD[1]));
+                                    //console.log(corner0);
+                                      if (corner1 == 1)
+                                      {
+                                          //end = true;
+                                        corner2 = 0;
+                                        if ( squareA[0] % 2 == 1) corner2++;
+                                        if ( squareD[0] % 2 == 1) corner2++;
+                                        if ( squareE[1] % 2 == 1) corner2++;
+                                    //console.log("A0: " + squareDec2bin(squareA));
+                                    //console.log("D0: " + squareDec2bin(squareD));
+                                    //console.log("E1: " + squareDec2bin(squareE));
+                                    //console.log(corner2);
+
+                                        if (corner2 == 1)
+                                        {
+                                          corner3 = 0;
+                                          if ( squareA[1] % 2 == 1) corner3++;
+                                          if ( squareB[1] % 2 == 1) corner3++;
+                                          if ( squareE[0] % 2 == 1) corner3++;
+
+                                          if (corner3 == 1)
                                             end = true;
                                         
                                         }
@@ -144,7 +211,19 @@ function solveCube(cube)
                                     }
                                   }
                                 }
-                              }                      
+                              }                    
+                            }                                          
+                                          
+                                          {
+                                            end = true;
+                                          }
+                                        }
+}
+                                      }
+                                    }
+                                  }
+                                }
+                              }                    
                             }
                           }
                         }
@@ -165,6 +244,7 @@ function solveCube(cube)
   fillHtmlSquare(squareD, "dd");
   fillHtmlSquare(squareE, "ee");
   fillHtmlSquare(squareA, "aa");
+  fillHtmlSquare(squareF, "ff");
 }
 
 
