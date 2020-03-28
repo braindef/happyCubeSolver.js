@@ -1,0 +1,106 @@
+	<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Happy Cube Solver</title>
+
+    <script src="./HelperFunctions.js" charset="UTF-8"></script>
+    <script src="./Cubes.js" charset="UTF-8"></script>
+<!--    
+    <script src="./alphabeta.js" charset="UTF-8"></script>-->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
+  </head>
+  <body style="font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;">
+
+
+
+<div class=float>
+<div>
+  <button id=a00> </button><button id=a01> </button><button id=a02> </button><button id=a03> </button><button id=a04> </button><br>
+  <button id=a10> </button><button id=a11> </button><button id=a12> </button><button id=a13> </button><button id=a14> </button><br>
+  <button id=a20> </button><button id=a21> </button><button id=a22> </button><button id=a23> </button><button id=a24> </button><br>
+  <button id=a30> </button><button id=a31> </button><button id=a32> </button><button id=a33> </button><button id=a34> </button><br>
+  <button id=a40> </button><button id=a41> </button><button id=a42> </button><button id=a43> </button><button id=a44> </button><br>
+</div>
+
+
+<div>
+  <button id=b00> </button><button id=b01> </button><button id=b02> </button><button id=b03> </button><button id=b04> </button><br>
+  <button id=b10> </button><button id=b11> </button><button id=b12> </button><button id=b13> </button><button id=b14> </button><br>
+  <button id=b20> </button><button id=b21> </button><button id=b22> </button><button id=b23> </button><button id=b24> </button><br>
+  <button id=b30> </button><button id=b31> </button><button id=b32> </button><button id=b33> </button><button id=b34> </button><br>
+  <button id=b40> </button><button id=b41> </button><button id=b42> </button><button id=b43> </button><button id=b44> </button><br>
+</div>
+</div>
+
+<div class=float>
+<div>
+  <button id=c00> </button><button id=c01> </button><button id=c02> </button><button id=c03> </button><button id=c04> </button><br>
+  <button id=c10> </button><button id=c11> </button><button id=c12> </button><button id=c13> </button><button id=c14> </button><br>
+  <button id=c20> </button><button id=c21> </button><button id=c22> </button><button id=c23> </button><button id=c24> </button><br>
+  <button id=c30> </button><button id=c31> </button><button id=c32> </button><button id=c33> </button><button id=c34> </button><br>
+  <button id=c40> </button><button id=c41> </button><button id=c42> </button><button id=c43> </button><button id=c44> </button><br>
+</div>
+
+<div>
+  <button id=d00> </button><button id=d01> </button><button id=d02> </button><button id=d03> </button><button id=d04> </button><br>
+  <button id=d10> </button><button id=d11> </button><button id=d12> </button><button id=d13> </button><button id=d14> </button><br>
+  <button id=d20> </button><button id=d21> </button><button id=d22> </button><button id=d23> </button><button id=d24> </button><br>
+  <button id=d30> </button><button id=d31> </button><button id=d32> </button><button id=d33> </button><button id=d34> </button><br>
+  <button id=d40> </button><button id=d41> </button><button id=d42> </button><button id=d43> </button><button id=d44> </button><br>
+</div>
+</div>
+
+
+
+<div class=float>
+<div>
+  <button id=e00> </button><button id=e01> </button><button id=e02> </button><button id=e03> </button><button id=e04> </button><br>
+  <button id=e10> </button><button id=e11> </button><button id=e12> </button><button id=e13> </button><button id=e14> </button><br>
+  <button id=e20> </button><button id=e21> </button><button id=e22> </button><button id=e23> </button><button id=e24> </button><br>
+  <button id=e30> </button><button id=e31> </button><button id=e32> </button><button id=e33> </button><button id=e34> </button><br>
+  <button id=e40> </button><button id=e41> </button><button id=e42> </button><button id=e43> </button><button id=e44> </button><br>
+</div>
+
+
+<div>
+  <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
+  <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
+  <button id=f20> </button><button id=f21> </button><button id=f22> </button><button id=f23> </button><button id=f24> </button><br>
+  <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
+  <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+</div>
+
+
+<!-- The Modal Dialogbox selecting pawn replacement -->
+<div id="select" class="modal">
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <p>Select the Figure for the Pawn the just arrived the other side of the Board</p>
+    <button id=s0 onClick="transformationFigure='♖'; continueTransformation()">♜</button>
+    <button id=s1>♞</button>
+    <button id=s2>♝</button>
+    <button id=s3>♛</button>
+  </div>
+</div>
+
+<!-- The Modal Dialogbox for checkmate -->
+<div id="illegal" class="modal">
+  <!-- Modal content -->
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <p>Illegal Move</p>
+  </div>
+</div>
+<br><br>
+    <a href="https://github.com/braindef/happyCubeSolver.js">https://github.com/braindef/happyCubeSolver.js</a>
+
+  </body>
+
+
+<script>
+start();
+</script>
+</html>
+
+
