@@ -4,9 +4,9 @@ function squareDec2bin(square)
 {
   result = "";
   for (var i = 0; i < 4; i++)
-    result += " | " + i + ": " + dec2bin(square[i]);
+    result += i + ": " + dec2bin(square[i]) + " | ";
     
-    return result.substr(3);
+    return result;
 
 }
 

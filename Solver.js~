@@ -102,18 +102,45 @@ function solveCube(cube)
                                     if ( squareA[2] % 2 == 1 ) corner0++;
                                     if ( squareB[0] % 2 == 1 ) corner0++;
                                     if ( squareC[1] % 2 == 1 ) corner0++;
-                                    console.log("A1: " + dec2bin(squareA[1]));
-                                    console.log("B3: " + dec2bin(squareB[3]));
-                                    console.log("C0: " + dec2bin(squareC[0]));
-                                    console.log(corner0);
+                                    //console.log("A1: " + dec2bin(squareA[1]));
+                                    //console.log("B3: " + dec2bin(squareB[3]));
+                                    //console.log("C1: " + dec2bin(squareC[0]));
+                                    //console.log(corner0);
                                     if (corner0 == 1)
                                     {
                                       corner1 = 0;
                                       if ( squareA[3] % 2 == 1) corner1++;
                                       if ( squareC[0] % 2 == 1) corner1++;
                                       if ( squareD[1] % 2 == 1) corner1++;
-                                      if (corner1 == 2)
-                                        end = true;
+                                    //console.log("A3: " + dec2bin(squareA[3]));
+                                    //console.log("C0: " + dec2bin(squareC[0]));
+                                    //console.log("D1: " + dec2bin(squareD[1]));
+                                    //console.log(corner0);
+                                      if (corner1 == 1)
+                                      {
+                                          //end = true;
+                                        corner2 = 0;
+                                        if ( squareA[0] % 2 == 1) corner2++;
+                                        if ( squareD[0] % 2 == 1) corner2++;
+                                        if ( squareE[1] % 2 == 1) corner2++;
+                                    //console.log("A0: " + squareDec2bin(squareA));
+                                    //console.log("D0: " + squareDec2bin(squareD));
+                                    //console.log("E1: " + squareDec2bin(squareE));
+                                    //console.log(corner2);
+
+                                        if (corner2 == 1)
+                                        {
+                                          corner3 = 0;
+                                          if ( squareA[1] % 2 == 1) corner3++;
+                                          if ( squareB[1] % 2 == 1) corner3++;
+                                          if ( squareE[1] % 2 == 1) corner3++;
+
+                                          if (corner3 == 1)
+                                            end = true;
+                                        
+                                        }
+
+                                      }
                                     }
                                   }
                                 }
