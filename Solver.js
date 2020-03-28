@@ -97,12 +97,25 @@ function solveCube(cube)
                                        (checkEdgeTree(squareA[2], squareC[0])) &&
                                        (checkEdgeTree(squareA[3], squareD[0])) )
                                   {
-                                    corner1 = 0;
-                                    if (dec2bin(squareA[1]).charAt(5) == "1") corner1++;
-                                    if (dec2bin(squareB[3]).charAt(5) == "1") corner1++;
-                                    if (dec2bin(squareC[0]).charAt(0) == "1") corner1++;
-                                    if (corner1 == 1)
-                                      end = true;
+
+                                    corner0 = 0;
+                                    if (squareA[2]%2 == 1) corner0++;
+                                    if (squareB[0]%2 == 1) corner0++;
+                                    if (squareC[1]%2 == 1 ) corner0++;
+                                    console.log("A1: " + dec2bin(squareA[1]));
+                                    console.log("B3: " + dec2bin(squareB[3]));
+                                    console.log("C0: " + dec2bin(squareC[0]));
+                                    console.log(corner0);
+                                    if (corner0 == 1)
+                                    {
+                                                       end = true;
+                                      corner1 = 0;
+                                      if (dec2bin(squareA[2]).charAt(0) == "1") corner1++;
+                                      if (dec2bin(squareC[3]).charAt(0) == "1") corner1++;
+                                      if (dec2bin(squareD[0]).charAt(0) == "1") corner1++;
+                                      //if (corner1 == 1)
+                                        end = true;
+                                    }
                                   }
                                 }
                               }                      
