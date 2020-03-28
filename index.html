@@ -5,6 +5,7 @@
 
     <script src="./HelperFunctions.js" charset="UTF-8"></script>
     <script src="./Cubes.js" charset="UTF-8"></script>
+    <script src="./Solver.js" charset="UTF-8"></script>
 <!--    
     <script src="./alphabeta.js" charset="UTF-8"></script>-->
     <link rel="stylesheet" href="./css/style.css">
@@ -78,11 +79,11 @@
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>A</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=aa00> </button><button id=aa01> </button><button id=aa02> </button><button id=aa03> </button><button id=aa04> </button><br>
+    <button id=aa10> </button><button id=aa11> </button><button id=aa12> </button><button id=aa13> </button><button id=aa14> </button><br>
+    <button id=aa20> </button><button id=aa21> </button><button id=aa22>A</button><button id=aa23> </button><button id=aa24> </button><br>
+    <button id=aa30> </button><button id=aa31> </button><button id=aa32> </button><button id=aa33> </button><button id=aa34> </button><br>
+    <button id=aa40> </button><button id=aa41> </button><button id=aa42> </button><button id=aa43> </button><button id=aa44> </button><br>
   </div>
 
 
@@ -91,35 +92,35 @@
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>B</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=bb00> </button><button id=bb01> </button><button id=bb02> </button><button id=bb03> </button><button id=bb04> </button><br>
+    <button id=bb10> </button><button id=bb11> </button><button id=bb12> </button><button id=bb13> </button><button id=bb14> </button><br>
+    <button id=bb20> </button><button id=bb21> </button><button id=bb22>B</button><button id=bb23> </button><button id=bb24> </button><br>
+    <button id=bb30> </button><button id=bb31> </button><button id=bb32> </button><button id=bb33> </button><button id=bb34> </button><br>
+    <button id=bb40> </button><button id=bb41> </button><button id=bb42> </button><button id=bb43> </button><button id=bb44> </button><br>
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>C</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=cc00> </button><button id=cc01> </button><button id=cc02> </button><button id=cc03> </button><button id=cc04> </button><br>
+    <button id=cc10> </button><button id=cc11> </button><button id=cc12> </button><button id=cc13> </button><button id=cc14> </button><br>
+    <button id=cc20> </button><button id=cc21> </button><button id=cc22>C</button><button id=cc23> </button><button id=cc24> </button><br>
+    <button id=cc30> </button><button id=cc31> </button><button id=cc32> </button><button id=cc33> </button><button id=cc34> </button><br>
+    <button id=cc40> </button><button id=cc41> </button><button id=cc42> </button><button id=cc43> </button><button id=cc44> </button><br>
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>D</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=dd00> </button><button id=dd01> </button><button id=dd02> </button><button id=dd03> </button><button id=dd04> </button><br>
+    <button id=dd10> </button><button id=dd11> </button><button id=dd12> </button><button id=dd13> </button><button id=dd14> </button><br>
+    <button id=dd20> </button><button id=dd21> </button><button id=dd22>D</button><button id=dd23> </button><button id=dd24> </button><br>
+    <button id=dd30> </button><button id=dd31> </button><button id=dd32> </button><button id=dd33> </button><button id=dd34> </button><br>
+    <button id=dd40> </button><button id=dd41> </button><button id=dd42> </button><button id=dd43> </button><button id=dd44> </button><br>
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>E</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=ee00> </button><button id=ee01> </button><button id=ee02> </button><button id=ee03> </button><button id=ee04> </button><br>
+    <button id=ee10> </button><button id=ee11> </button><button id=ee12> </button><button id=ee13> </button><button id=ee14> </button><br>
+    <button id=ee20> </button><button id=ee21> </button><button id=ee22>E</button><button id=ee23> </button><button id=ee24> </button><br>
+    <button id=ee30> </button><button id=ee31> </button><button id=ee32> </button><button id=ee33> </button><button id=ee34> </button><br>
+    <button id=ee40> </button><button id=ee41> </button><button id=ee42> </button><button id=ee43> </button><button id=ee44> </button><br>
   </div>
 
   <div class=newline>
@@ -130,11 +131,11 @@
   </div>
 
   <div class=square>
-    <button id=f00> </button><button id=f01> </button><button id=f02> </button><button id=f03> </button><button id=f04> </button><br>
-    <button id=f10> </button><button id=f11> </button><button id=f12> </button><button id=f13> </button><button id=f14> </button><br>
-    <button id=f20> </button><button id=f21> </button><button id=f22>F</button><button id=f23> </button><button id=f24> </button><br>
-    <button id=f30> </button><button id=f31> </button><button id=f32> </button><button id=f33> </button><button id=f34> </button><br>
-    <button id=f40> </button><button id=f41> </button><button id=f42> </button><button id=f43> </button><button id=f44> </button><br>
+    <button id=ff00> </button><button id=ff01> </button><button id=ff02> </button><button id=ff03> </button><button id=ff04> </button><br>
+    <button id=ff10> </button><button id=ff11> </button><button id=ff12> </button><button id=ff13> </button><button id=ff14> </button><br>
+    <button id=ff20> </button><button id=ff21> </button><button id=ff22>F</button><button id=ff23> </button><button id=ff24> </button><br>
+    <button id=ff30> </button><button id=ff31> </button><button id=ff32> </button><button id=ff33> </button><button id=ff34> </button><br>
+    <button id=ff40> </button><button id=ff41> </button><button id=ff42> </button><button id=ff43> </button><button id=ff44> </button><br>
   </div>
 
   <div class=newline>

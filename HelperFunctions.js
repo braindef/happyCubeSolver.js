@@ -14,6 +14,7 @@ fields = [["f00", "f01", "f02", "f03", "f04"],
           ["f30", "f31", "f32", "f33", "f34"],
           ["f40", "f41", "f42", "f43", "f44"]];
 
+
 function fillHtmlCube(cube)
 {
   pos = "abcdef";

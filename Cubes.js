@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //flipSquare(blue[3]);
   //console.log(flipRow(0b01011));
   fillHtmlCube(blue);
+  solveCube(blue);
 });
 
 
