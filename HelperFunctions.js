@@ -74,10 +74,7 @@ function load(color)
     changeFieldColor("#ff7cff", "#purple");
     changeFieldColor("#000000", "#solve");
     
-
-
     fillHtmlCube(selected);
-  
 }
 
 function changeFieldColor(color, item){
