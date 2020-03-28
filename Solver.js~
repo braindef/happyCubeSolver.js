@@ -92,12 +92,18 @@ function solveCube(cube)
                                   if (end) break;
                                   
                                   squareA = rotateSquare(flippedSquareA, u);
-                                if ( (checkEdgeTree(squareA[0], squareE[0])) &&
-                                     (checkEdgeTree(squareA[1], squareB[0])) &&
-                                     (checkEdgeTree(squareA[2], squareC[0])) &&
-                                     (checkEdgeTree(squareA[3], squareD[0])) &&
-                                      )
-                                  end = true;
+                                  if ( (checkEdgeTree(squareA[0], squareE[0])) &&
+                                       (checkEdgeTree(squareA[1], squareB[0])) &&
+                                       (checkEdgeTree(squareA[2], squareC[0])) &&
+                                       (checkEdgeTree(squareA[3], squareD[0])) )
+                                  {
+                                    corner1 = 0;
+                                    if (dec2bin(squareA[1]).charAt(5) == "1") corner1++;
+                                    if (dec2bin(squareB[3]).charAt(5) == "1") corner1++;
+                                    if (dec2bin(squareC[0]).charAt(0) == "1") corner1++;
+                                    if (corner1 != 1)
+                                      end = true;
+                                  }
                                 }
                               }                      
                             }
