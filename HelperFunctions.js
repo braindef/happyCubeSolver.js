@@ -29,21 +29,27 @@ function load(color)
   if (color == "blue")
   {
     changeFieldColor("#afdde9", "button");
-    changeFieldColor("#afdde9", "#blue");
-    changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#fa7777", "#red");
   
     selected = blue;
   }
   if (color == "green")
   {
     changeFieldColor("#aaf400", "button");
-    changeFieldColor("#afdde9", "#blue");
-    changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#fa7777", "#red");
   
     selected = green;
   }
+  if (color == "red")
+  {
+    changeFieldColor("#fa7777", "button");
+  
+    selected = red;
+  }
+
+    changeFieldColor("#afdde9", "#blue");
+    changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#fa7777", "#red");
+
+
     fillHtmlCube(selected);
   
 }

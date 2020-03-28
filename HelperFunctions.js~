@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   changeFieldColor("#afdde9", "#blue");
   changeFieldColor("#aaf400", "#green");
   changeFieldColor("#fa7777", "#red");
+  changeFieldColor("#000000", "#solve");
   
   fillHtmlCube(selected);
   
@@ -37,6 +38,15 @@ function load(color)
   if (color == "green")
   {
     changeFieldColor("#aaf400", "button");
+    changeFieldColor("#afdde9", "#blue");
+    changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#fa7777", "#red");
+  
+    selected = green;
+  }
+  if (color == "red")
+  {
+    changeFieldColor("#fa7777", "button");
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
     changeFieldColor("#fa7777", "#red");
