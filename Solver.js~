@@ -16,38 +16,31 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
   for (var i1 = 0; i1 < 6; i1++)
   {
     if (end) break;
-    
-    for (var i2 = 0; i2 < 2; i2++)
-    {
-      if (end) break;
-      flippedSquareB = cube[i1].slice();
+ 
+      squareB = cube[i1].slice();
 
-      if (i2 == 1)
-        flippedSquareB = flipSquare(cube[i1]);
-
-      //for (var i3 = 0; j3 < 4; j3++)
-      //{
-        //if (end) break;
-
-        //squareB = rotateSquare(flippedSquareB, i3);  
  // 6 flächen (wenn schon gebraucht = continue), flippen, drehen, flächen kontrollieren
     
       for (var j1 = 0; j1 < 6; j1++) 
       {
+        if (end) break;
+
         if (j1 == i1) continue;
+
         for (var j2 = 0; j2 < 2; j2++)
         {
           if (end) break;
 
           flippedSquareC = cube[j1].slice();
-
           if (j2 == 1)
             flippedSquareC = flipSquare(cube[j1]);
+ 
           for (var j3 = 0; j3 < 4; j3++)
           {
             if (end) break;
-
+            
             squareC = rotateSquare(flippedSquareC, j3);
+            
             if (checkEdgeTree(squareB[3], squareC[1]))
             {
               for (var k1 = 0; k1 < 6; k1++)
@@ -56,6 +49,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
                 if (k1 == i1) continue;
                 if (k1 == j1) continue;
+
                 for (var k2 = 0; k2 < 2; k2++)
                 {
                   if (end) break;
@@ -121,40 +115,40 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                          (checkEdgeTree(squareA[3], squareD[0])) )
                                     {
                                       //check if the corner0 has exactly one of the three possible fields from the three squares
-                                      corner0 = 0;
-                                      if ( squareA[2] % 2 == 1 ) corner0++;
-                                      if ( squareB[0] % 2 == 1 ) corner0++;
-                                      if ( squareC[1] % 2 == 1 ) corner0++;
-                                      if (corner0 == 1)
+
+                                      cornerA0 = 0;
+                                      if ( squareA[2] % 2 == 1 ) cornerA0++;
+                                      if ( squareB[0] % 2 == 1 ) cornerA0++;
+                                      if ( squareC[1] % 2 == 1 ) cornerA0++;
+                                      if (cornerA0 == 1)
                                       {
-                                        corner1 = 0;
-                                        if ( squareA[3] % 2 == 1) corner1++;
-                                        if ( squareC[0] % 2 == 1) corner1++;
-                                        if ( squareD[1] % 2 == 1) corner1++;
-                                      //console.log("A3: " + dec2bin(squareA[3]));
-                                      //console.log("C0: " + dec2bin(squareC[0]));
-                                      //console.log("D1: " + dec2bin(squareD[1]));
+                                        cornerA1 = 0;
+                                        if ( squareA[3] % 2 == 1) cornerA1++;
+                                        if ( squareC[0] % 2 == 1) cornerA1++;
+                                        if ( squareD[1] % 2 == 1) cornerA1++;
+                                      //console.log("A3: " + getBitRow(squareA[3]));
+                                      //console.log("C0: " + getBitRow(squareC[0]));
+                                      //console.log("D1: " + getBitRow(squareD[1]));
                                       //console.log(corner0);
-                                        if (corner1 == 1)
+                                        if (cornerA1 == 1)
                                         {
-                                            //end = true;
-                                          corner2 = 0;
-                                          if ( squareA[0] % 2 == 1) corner2++;
-                                          if ( squareD[0] % 2 == 1) corner2++;
-                                          if ( squareE[1] % 2 == 1) corner2++;
-                                      //console.log("A0: " + squareDec2bin(squareA));
-                                      //console.log("D0: " + squareDec2bin(squareD));
-                                      //console.log("E1: " + squareDec2bin(squareE));
+                                          cornerA2 = 0;
+                                          if ( squareA[0] % 2 == 1) cornerA2++;
+                                          if ( squareD[0] % 2 == 1) cornerA2++;
+                                          if ( squareE[1] % 2 == 1) cornerA2++;
+                                      //console.log("A0: " + getBitRow(squareA));
+                                      //console.log("D0: " + getBitRow(squareD));
+                                      //console.log("E1: " + getBitRow(squareE));
                                       //console.log(corner2);
 
-                                          if (corner2 == 1)
+                                          if (cornerA2 == 1)
                                           {
-                                            corner3 = 0;
-                                            if ( squareA[1] % 2 == 1) corner3++;
-                                            if ( squareB[1] % 2 == 1) corner3++;
-                                            if ( squareE[0] % 2 == 1) corner3++;
+                                            cornerA3 = 0;
+                                            if ( squareA[1] % 2 == 1) cornerA3++;
+                                            if ( squareB[1] % 2 == 1) cornerA3++;
+                                            if ( squareE[0] % 2 == 1) cornerA3++;
 
-                                            if (corner3 == 1)
+                                            if (cornerA3 == 1)
                                             {
                                               for (var n1 = 0; n1 < 6; n1++)
                                               {
@@ -185,33 +179,36 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                   {
                                                   //check if the corner0 has exactly one of the three possible fields from the three squares
                                                     cornerF0 = 0;
-                                                    if ( squareF[0] % 2 == 1 ) cornerF0++;
-                                                    if ( squareC[3] % 2 == 1 ) cornerF0++;
-                                                    if ( squareD[2] % 2 == 1 ) cornerF0++;
+                                                    console.log("sF0:" +getBitRow(squareF[0])+" " + getBitRow(squareF[0]) );
+                                                    console.log("sC3:" +getBitRow(squareC[3])+" " + getBitRow(squareC[3]) );
+                                                    console.log("sD2:" +getBitRow(squareD[2])+" " + getBitRow(squareD[2]) );
+                                                    if (squareF[0] % 2 == 1) cornerF0++;
+                                                    if (squareC[3] % 2 == 1) cornerF0++;
+                                                    if (squareD[2] % 2 == 1) cornerF0++;
+                                                    console.log("cF0= "+cornerF0);
                                                     if (cornerF0 == 1)
                                                     {
+
+                                                      end=true;                                                    
                                                       cornerF1 = 0;
-                                                      if ( squareF[1] % 2 == 1) cornerF1++;
-                                                      if ( squareB[3] % 2 == 1) cornerF1++;
-                                                      if ( squareC[2] % 2 == 1) cornerF1++;
+                                                      if (squareF[1] % 2 == 1) cornerF1++;
+                                                      if (squareC[2] % 2 == 1) cornerF1++;
+                                                      if (squareB[3] % 2 == 1) cornerF1++;
+                                                      console.log("cF1= "+cornerF0);
                                                       if (cornerF1 == 1)
                                                       {
-   //end = true; 
+                                                      
                                                         cornerF2 = 0;
-                                                        if ( squareF[2] % 2 == 1) cornerF2++;
-                                                        if ( squareB[3] % 2 == 1) cornerF2++;
-                                                        if ( squareE[3] % 2 == 1) cornerF2++;
-
+                                                        if (squareF[2] % 2 == 1) cornerF2++;
+                                                        if (squareE[3] % 2 == 1) cornerF2++;
+                                                        if (squareB[2] % 2 == 1) cornerF2++;
+                                                        console.log("cF2= "+cornerF0);
                                                         if (cornerF2 == 1)
                                                         {
-                                                          cornerF3 = 0;
-                                                          if ( squareF[3] % 2 == 1) cornerF3++;
-                                                          if ( squareE[2] % 2 == 1) cornerF3++;
-                                                          if ( squareD[3] % 2 == 1) cornerF3++;
-
-                                                          if (cornerF3 == 1)
-                                                            end = true;
-                                                        }
+                                                        
+                                                    
+                                                      end = true;
+                                                      }
                                                       }
                                                     }
                                                   }
@@ -239,23 +236,23 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
       }
     }
   }
-}
 
 //TODO: count solutions
-  fillHtmlSquare(squareB, "bb");
-  fillHtmlSquare(squareC, "cc");
-  fillHtmlSquare(squareD, "dd");
-  fillHtmlSquare(squareE, "ee");
-  fillHtmlSquare(squareA, "aa");
-  fillHtmlSquare(squareF, "ff");
+fillHtmlSquare(squareB, "bb", "white");
+fillHtmlSquare(squareC, "cc", "white");
+fillHtmlSquare(squareD, "dd", "white");
+fillHtmlSquare(squareE, "ee", "white");
+fillHtmlSquare(squareA, "aa", "white");
+fillHtmlSquare(squareF, "ff", "white"); 
+
 }
 
 
 function checkEdgeTree(edgeA, edgeB)
 {
   for ( var i = 1; i < 3; i++)
-    if (!((dec2bin(edgeA).charAt(i) == "0" && dec2bin(edgeB).charAt(i) == "1")||
-         (dec2bin(edgeA).charAt(i) == "1" && dec2bin(edgeB).charAt(i) == "0")) )
+    if (!((getBit(edgeA, i) == "0" && getBit(edgeB, i) == "1")||
+         ( getBit(edgeA, i) == "1" && getBit(edgeB, i) == "0")) )
     {
       return false;
     }
@@ -276,19 +273,11 @@ function rotateSquare(square, times)
 function flipSquare(square)     //TODO: check if order of the direction not changed
 {
   result = [ 0b0, 0b0, 0b0, 0b0 ];
-  resultRightOrder = [ 0b0, 0b0, 0b0, 0b0 ];
   for (var i=0; i<4; i++)
   {
-    //console.log("flipSquare()" + i + ": " + dec2bin(square[i]) + " -> " + dec2bin(flipRow(square[i])));
     result[i] = flipRow(square[i]);
   }
 
-  for (var i=0; i<4; i++)
-  {
-    resultRightOrder[i] = result[3-i];
-    //console.log("res1: "+dec2bin(result[i]));
-    //console.log("res2: "+dec2bin(resultRightOrder[i]));
-  }
   return result;
 }
 
@@ -297,31 +286,10 @@ function flipRow(row)
 {
   result = 0b00000;
 
-  if (debug) console.log(dec2bin(row));
-
   for (var i = 0; i<5; i++)
-  {
-    exponent = Math.pow(2,4-i);
-    if (row / exponent >= 1)
-    {
-      row -= exponent;
-      result += Math.pow(2,i);
-      if (debug) console.log(i + ": " + row + ": " + dec2bin(row) + " / " + exponent + " result: " + dec2bin(result));
-    }
-  }
+    if (getBit(row, i))
+      result[4-i] = 1;
+      
   return result;
 }
 
-/*
-place 0
- take next (pointer rechte kante)
-   for (i<4) rotate
-     test if match
-   flip
-   for (i<4) rotate
-     test if match
-
-
-pointer für kante der ersten 4   
-   
-*/
