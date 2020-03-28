@@ -34,7 +34,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
           flippedSquareC = cube[j1].slice();
           if (j2 == 1)
           {
-            //printBitSquare(flippedSquareC);
+/*            //printBitSquare(flippedSquareC);
             console.log("slice()");
             printBitSquare(cube[j1].slice());
             console.log("NOslice()");
@@ -47,7 +47,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
             flippedSquareC = flipSquare(flippedSquareC.slice());
             printBitSquare(flippedSquareC);
             console.log("flipped");
-            printBitSquare(flippedSquareC);
+            printBitSquare(flippedSquareC); */
+            flippedSquareC = flipSquare(flippedSquareC);
           }
  
           for (var j3 = 0; j3 < 4; j3++)
@@ -180,7 +181,6 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                 
                                               for (var n2 = 0; n2 < 2; n2++)
                                               {
-                                       // end = true;
                                                 if (end) break;
 
                                                 flippedSquareF = cube[n1].slice();

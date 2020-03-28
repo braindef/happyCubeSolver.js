@@ -180,7 +180,6 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                 
                                               for (var n2 = 0; n2 < 2; n2++)
                                               {
-                                       // end = true;
                                                 if (end) break;
 
                                                 flippedSquareF = cube[n1].slice();
@@ -306,13 +305,7 @@ function rotateSquare(square, times)
 
 function flipSquare(square)     //TODO: check if order of the direction not changed
 {
-  console.log("flipSquare()");
-  printBitSquare(square);
   
-  //console.log(square[0]);
-  //console.log(flipRow(square[0]));
-  
-  result = [0b0, 0b0, 0b0, 0b0 ];
   a = flipRow(square[0]);
   b = flipRow(square[3]);
   c = flipRow(square[2]);
