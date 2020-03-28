@@ -179,36 +179,36 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                   {
                                                   //check if the corner0 has exactly one of the three possible fields from the three squares
                                                     cornerF0 = 0;
-                                                    console.log("sF0:" +getBitRow(squareF[0])+" " + getBitRow(squareF[0]) );
-                                                    console.log("sC3:" +getBitRow(squareC[3])+" " + getBitRow(squareC[3]) );
-                                                    console.log("sD2:" +getBitRow(squareD[2])+" " + getBitRow(squareD[2]) );
                                                     if (squareF[0] % 2 == 1) cornerF0++;
                                                     if (squareC[3] % 2 == 1) cornerF0++;
                                                     if (squareD[2] % 2 == 1) cornerF0++;
                                                     console.log("cF0= "+cornerF0);
                                                     if (cornerF0 == 1)
                                                     {
-
-                                                      end=true;                                                    
                                                       cornerF1 = 0;
                                                       if (squareF[1] % 2 == 1) cornerF1++;
                                                       if (squareC[2] % 2 == 1) cornerF1++;
                                                       if (squareB[3] % 2 == 1) cornerF1++;
-                                                      console.log("cF1= "+cornerF0);
+                                                      console.log("cF1= "+cornerF1);
                                                       if (cornerF1 == 1)
                                                       {
-                                                      
                                                         cornerF2 = 0;
                                                         if (squareF[2] % 2 == 1) cornerF2++;
                                                         if (squareE[3] % 2 == 1) cornerF2++;
                                                         if (squareB[2] % 2 == 1) cornerF2++;
-                                                        console.log("cF2= "+cornerF0);
+                                                        console.log("cF2= "+cornerF2);
                                                         if (cornerF2 == 1)
                                                         {
-                                                        
-                                                    
-                                                      end = true;
-                                                      }
+                                                          cornerF3 = 0;
+                                                          if (squareF[3] % 2 == 1) cornerF2++;
+                                                          if (squareE[2] % 2 == 1) cornerF2++;
+                                                          if (squareD[3] % 2 == 1) cornerF2++;
+                                                          console.log("cF2= "+cornerF2);
+                                                          if (cornerF2 == 1)
+                                                          {
+                                                            end = true;
+                                                          }
+                                                        }
                                                       }
                                                     }
                                                   }
@@ -244,6 +244,8 @@ fillHtmlSquare(squareD, "dd", "white");
 fillHtmlSquare(squareE, "ee", "white");
 fillHtmlSquare(squareA, "aa", "white");
 fillHtmlSquare(squareF, "ff", "white"); 
+
+
 
 }
 
