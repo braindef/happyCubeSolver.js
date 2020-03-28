@@ -48,6 +48,6 @@ var blue6  = [ [ 0b00100, 0b00100, 0b00100, 0b00100 ],
              [ 0b10101, 0b11011, 0b10101, 0b11011 ] ];
 
 
-var blue = blue6;
+var blue = blue2;
 //               oben,   links,   unten,   rechts
 

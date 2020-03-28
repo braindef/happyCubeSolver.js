@@ -34,20 +34,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
           flippedSquareC = cube[j1].slice();
           if (j2 == 1)
           {
-            //printBitSquare(flippedSquareC);
-            console.log("slice()");
-            printBitSquare(cube[j1].slice());
-            console.log("NOslice()");
-            printBitSquare(cube[j1]);
-            var flippedSquareC = [ 0b0, 0b0, 0b0, 0b0 ];
-            for ( var i = 0; i < 4; i++)
-              flippedSquareC[i] = cube[j1][i];
-            console.log("bytewise copied");
-            printBitSquare(flippedSquareC);
-            flippedSquareC = flipSquare(flippedSquareC.slice());
-            printBitSquare(flippedSquareC);
-            console.log("flipped");
-            printBitSquare(flippedSquareC);
+            flippedSquareC = flipSquare(cube[k1]);
           }
  
           for (var j3 = 0; j3 < 4; j3++)
