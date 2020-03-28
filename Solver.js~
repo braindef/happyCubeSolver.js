@@ -95,7 +95,8 @@ function solveCube(cube)
                                 if ( (checkEdgeTree(squareA[0], squareE[0])) &&
                                      (checkEdgeTree(squareA[1], squareB[0])) &&
                                      (checkEdgeTree(squareA[2], squareC[0])) &&
-                                     (checkEdgeTree(squareA[3], squareD[0])) )
+                                     (checkEdgeTree(squareA[3], squareD[0])) &&
+                                      )
                                   end = true;
                                 }
                               }                      
