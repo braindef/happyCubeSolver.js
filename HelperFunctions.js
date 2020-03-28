@@ -13,7 +13,7 @@ function fillHtmlCube(cube)
   pos = "abcdef";
   for (var i=0; i<6; i++)
   {
-    //console.log(cube[i] +" " +pos.charAt(i));
+    console.log(cube[i] +" " +pos.charAt(i));
     fillHtmlSquare(cube[i], pos.charAt(i), "white");
   }
 }

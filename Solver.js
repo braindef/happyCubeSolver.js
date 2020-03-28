@@ -33,7 +33,22 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
           flippedSquareC = cube[j1].slice();
           if (j2 == 1)
-            flippedSquareC = flipSquare(cube[j1]);
+          {
+            //printBitSquare(flippedSquareC);
+            console.log("slice()");
+            printBitSquare(cube[j1].slice());
+            console.log("NOslice()");
+            printBitSquare(cube[j1]);
+            var flippedSquareC = [ 0b0, 0b0, 0b0, 0b0 ];
+            for ( var i = 0; i < 4; i++)
+              flippedSquareC[i] = cube[j1][i];
+            console.log("bytewise copied");
+            printBitSquare(flippedSquareC);
+            flippedSquareC = flipSquare(flippedSquareC.slice());
+            printBitSquare(flippedSquareC);
+            console.log("flipped");
+            printBitSquare(flippedSquareC);
+          }
  
           for (var j3 = 0; j3 < 4; j3++)
           {
@@ -109,13 +124,15 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                     if (end) break;
                                     
                                     squareA = rotateSquare(flippedSquareA, m3);
+                                    
+
                                     if ( (checkEdgeTree(squareA[0], squareE[0])) &&
                                          (checkEdgeTree(squareA[1], squareB[0])) &&
                                          (checkEdgeTree(squareA[2], squareC[0])) &&
                                          (checkEdgeTree(squareA[3], squareD[0])) )
                                     {
                                       //check if the corner0 has exactly one of the three possible fields from the three squares
-
+                                    
                                       cornerA0 = 0;
                                       if ( squareA[2] % 2 == 1 ) cornerA0++;
                                       if ( squareB[0] % 2 == 1 ) cornerA0++;
@@ -132,6 +149,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                       //console.log(corner0);
                                         if (cornerA1 == 1)
                                         {
+
                                           cornerA2 = 0;
                                           if ( squareA[0] % 2 == 1) cornerA2++;
                                           if ( squareD[0] % 2 == 1) cornerA2++;
@@ -162,6 +180,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                 
                                               for (var n2 = 0; n2 < 2; n2++)
                                               {
+                                       // end = true;
                                                 if (end) break;
 
                                                 flippedSquareF = cube[n1].slice();
@@ -272,15 +291,27 @@ function rotateSquare(square, times)
   return resultSquare;
 }
 
+
+//  <--           -->
+// 11010         01011
+// 1   1 ^     ^ 1   1 |
+// 0   0 | =>  | 0   0 |
+// 1   1 |     | 1   1 v
+// 00100         00100
+//  -->           <--
+
+//  testSquare = [ 0b11010, 0b01011, 0b00100, 0b01010 ];
+//  flippedTestSquare = [ 0b01011, 0b01010, 0b00100, 0b11010 ];
+
+
 function flipSquare(square)     //TODO: check if order of the direction not changed
 {
-  result = [ 0b0, 0b0, 0b0, 0b0 ];
-  for (var i=0; i<4; i++)
-  {
-    result[i] = flipRow(square[i]);
-  }
-
-  return result;
+  
+  a = flipRow(square[0]);
+  b = flipRow(square[3]);
+  c = flipRow(square[2]);
+  d = flipRow(square[1]);
+  return [a, b, c, d];
 }
 
 
@@ -290,8 +321,10 @@ function flipRow(row)
 
   for (var i = 0; i<5; i++)
     if (getBit(row, i))
-      result[4-i] = 1;
-      
+    {
+      //console.log(Math.pow(2,4-i));
+      result += Math.pow(2, 4-i);
+    } 
   return result;
 }
 

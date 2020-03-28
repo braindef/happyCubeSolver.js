@@ -38,7 +38,7 @@ function fillHtmlSquare(square, placement, color)
       }
     }
     
-    printBitSquare(square); 
+    //printBitSquare(square); 
 }
 
 
