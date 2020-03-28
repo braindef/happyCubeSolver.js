@@ -40,8 +40,15 @@ button.lost {
 }
 
 
+div.outer {
+  padding: 10px;
+  width: 100%;
+}
+
 div.container {
   position: relative;
+  display: table;
+  margin: auto;
 }
 
 div.square {
@@ -58,6 +65,4 @@ div.newline {
 
 }
 
-div.container {
-  width: 100%;
-}
+
