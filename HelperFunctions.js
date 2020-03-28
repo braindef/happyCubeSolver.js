@@ -12,11 +12,14 @@ fields = [["f00", "f01", "f02", "f03", "f04"],
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-  changeFieldColor("#aaf400", "button");
-  changeFieldColor("#afdde9", "#blue");
-  changeFieldColor("#aaf400", "#green");
-  changeFieldColor("#fa7777", "#red");
-  changeFieldColor("#000000", "#solve");
+  changeFieldColor("#afafaf", "button");
+    changeFieldColor("#afdde9", "#blue");
+    changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#ffff00", "#yellow");
+    changeFieldColor("#ffa20b", "#orange");
+    changeFieldColor("#fa7777", "#red");
+    changeFieldColor("#ff7cff", "#purple");
+    changeFieldColor("#000000", "#solve");
   
   fillHtmlCube(selected);
   
@@ -38,16 +41,39 @@ function load(color)
   
     selected = green;
   }
+  if (color == "yellow")
+  {
+    changeFieldColor("#ffff00", "button");
+  
+    selected = green;
+  }
+  if (color == "orange")
+  {
+    changeFieldColor("#ffa20b", "button");
+  
+    selected = green;
+  }
   if (color == "red")
   {
     changeFieldColor("#fa7777", "button");
   
     selected = red;
   }
+  if (color == "purple")
+  {
+    changeFieldColor("#ff7cff", "button");
+  
+    selected = red;
+  }
 
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#ffff00", "#yellow");
+    changeFieldColor("#ffa20b", "#orange");
     changeFieldColor("#fa7777", "#red");
+    changeFieldColor("#ff7cff", "#purple");
+    changeFieldColor("#000000", "#solve");
+    
 
 
     fillHtmlCube(selected);

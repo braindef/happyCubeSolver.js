@@ -19,7 +19,10 @@
 <div class=container>
   <button id="blue" onclick='load("blue")' style='width:400; background-color: #afdde9;'>load blue</button><br>
   <button id="green" onclick='load("green")' style='width:400; background-color: #aad400;'>load green</button><br>
+  <button id="yellow" onclick='load("yellow")' style='width:400; background-color: #aad400;'>load yellow</button><br>
+  <button id="orange" onclick='load("orange")' style='width:400; background-color: #aad400;'>load yellow</button><br>
   <button id="red" onclick='load("red")' style='width:400; background-color: #aad400;'>load red</button><br>
+  <button id="purple" onclick='load("purple")' style='width:400; background-color: #aad400;'>load purple</button><br>
 </div>
 
 <div class=container>
@@ -82,7 +85,7 @@
 </div>
 
 <div class=container>
-  <button id="solve" onclick='solveCube(selected)' style='width:400; background-color: red;'>solve</button><br>
+  <button id="solve" onclick='solveCube(selected)' style='width:400; color: white; background-color: black;'>solve</button><br>
 </div>
 </div>
 
