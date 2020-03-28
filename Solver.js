@@ -25,9 +25,8 @@ function solveCube(cube)
           if (end) break;
 
           squareC = rotateSquare(flippedSquareC, l);
-          if (checkEdge(squareB[3], squareC[1]))
+          if (checkEdgeTree(squareB[3], squareC[1]))
           {
-            console.log("MARK+: " +i + " " + j);
             for (var m = 0; m < 6; m++)
             {
               if (end) break;
@@ -39,16 +38,55 @@ function solveCube(cube)
                 if (end) break;
 
                 flippedSquareD = cube[m].slice();
-                 if (n == 1)
-                   flippedSquareD = flipSquare(cube[m]);
-                 for (var o = 0; o < 4; o++)
-                 {
-                   if (end) break;
+                if (n == 1)
+                  flippedSquareD = flipSquare(cube[m]);
+                for (var o = 0; o < 4; o++)
+                {
+                  if (end) break;
 
-                   squareD = rotateSquare(flippedSquareD, o);
-                   if (checkEdge(squareC[3], squareD[1]))
-                     end = true;
-                 }
+                  squareD = rotateSquare(flippedSquareD, o);
+                  if (checkEdgeTree(squareC[3], squareD[1]))
+                  {
+
+            for (var p = 0; p < 6; p++)
+            {
+              if (end) break;
+
+              if (p == i) continue;
+              if (p == j) continue;
+              if (p == m) continue;
+
+              for (var q = 0; q < 2; q++)
+              {
+                if (end) break;
+
+                flippedSquareE = cube[p].slice();
+                if (q == 1)
+                  flippedSquareE = flipSquare(cube[p]);
+                for (var r = 0; r < 4; r++)
+                {
+                  if (end) break;
+
+                  squareE = rotateSquare(flippedSquareE, o);
+                  if ( (checkEdgeTree(squareD[3], squareE[1])) &&
+                       (checkEdgeTree(squareE[3], squareB[1])) )
+                  {
+                    for (var s = 0; s < 6; s++)
+                    {
+
+
+                    }
+                    
+                    end = true;
+
+
+                  }
+                }
+              }
+            }
+
+                  }
+                }
               }
             }
           }
@@ -60,12 +98,13 @@ function solveCube(cube)
   fillHtmlSquare(squareB, "bb");
   fillHtmlSquare(squareC, "cc");
   fillHtmlSquare(squareD, "dd");
+  fillHtmlSquare(squareE, "ee");
 }
 
 
-function checkEdge(edgeA, edgeB)
+function checkEdgeTree(edgeA, edgeB)
 {
-  for ( var i = 0; i < 5; i++)
+  for ( var i = 1; i < 3; i++)
     if (!((dec2bin(edgeA).charAt(i) == "0" && dec2bin(edgeB).charAt(i) == "1")||
          (dec2bin(edgeA).charAt(i) == "1" && dec2bin(edgeB).charAt(i) == "0")) )
     {
