@@ -1,11 +1,58 @@
 
 
 //fields in html code
+/*
 fields = [["f00", "f01", "f02", "f03", "f04"],
           ["f10", "f11", "f12", "f13", "f14"],
           ["f20", "f21", "f22", "f23", "f24"],
           ["f30", "f31", "f32", "f33", "f34"],
           ["f40", "f41", "f42", "f43", "f44"]];
+*/
+
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+  changeFieldColor("#aaf400", "button");
+  changeFieldColor("#afdde9", "#blue");
+  changeFieldColor("#aaf400", "#green");
+  changeFieldColor("#fa7777", "#red");
+  
+  fillHtmlCube(selected);
+  
+});
+
+
+
+function load(color)
+{
+  if (color == "blue")
+  {
+    changeFieldColor("#afdde9", "button");
+    changeFieldColor("#afdde9", "#blue");
+    changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#fa7777", "#red");
+  
+    selected = blue;
+  }
+  if (color == "green")
+  {
+    changeFieldColor("#aaf400", "button");
+    changeFieldColor("#afdde9", "#blue");
+    changeFieldColor("#aaf400", "#green");
+    changeFieldColor("#fa7777", "#red");
+  
+    selected = green;
+  }
+    fillHtmlCube(selected);
+  
+}
+
+function changeFieldColor(color, item){
+    Array.from(document.querySelectorAll(item)).map(function(button) {
+               button.style.backgroundColor=color;
+    })
+}
+
 
 
 function fillHtmlCube(cube)
@@ -13,7 +60,7 @@ function fillHtmlCube(cube)
   pos = "abcdef";
   for (var i=0; i<6; i++)
   {
-    //console.log(cube[i] +" " +pos.charAt(i));
+    console.log(cube[i] +" " +pos.charAt(i));
     fillHtmlSquare(cube[i], pos.charAt(i), "white");
   }
 }
@@ -30,7 +77,6 @@ function fillHtmlSquare(square, placement, color)
       row[1] = placement + j + "0";   //left
       row[2] = placement + "4" + j;       //bottom
       row[3] = placement + (4-j) + "4";
-      
       
       if (!getBit(square[i], j))
       {

@@ -19,10 +19,6 @@ button, input {
   background-color: #afdde9;
 }
 
-button.legend {
-  background-color: white;
-  font-size:20;
-}
 
 button.lost {
   background-color: white;
@@ -49,7 +45,6 @@ div.container {
   position: relative;
   display: table;
   margin: auto;
-  border: 1px solid #afdde9  ;
 }
 
 div.square {
