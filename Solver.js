@@ -163,47 +163,40 @@ function solveCube(cube)
                                                      (checkEdgeTree(squareF[1], squareB[2])) &&
                                                      (checkEdgeTree(squareF[2], squareE[2])) &&
                                                      (checkEdgeTree(squareF[3], squareD[2])) )
-                                  {
-                                    //check if the corner0 has exactly one of the three possible fields from the three squares
-                                    corner0 = 0;
-                                    if ( squareA[2] % 2 == 1 ) corner0++;
-                                    if ( squareB[0] % 2 == 1 ) corner0++;
-                                    if ( squareC[1] % 2 == 1 ) corner0++;
-                                    //console.log("A1: " + dec2bin(squareA[1]));
-                                    //console.log("B3: " + dec2bin(squareB[3]));
-                                    //console.log("C1: " + dec2bin(squareC[0]));
-                                    //console.log(corner0);
-                                    if (corner0 == 1)
-                                    {
-                                      corner1 = 0;
-                                      if ( squareA[3] % 2 == 1) corner1++;
-                                      if ( squareC[0] % 2 == 1) corner1++;
-                                      if ( squareD[1] % 2 == 1) corner1++;
-                                    //console.log("A3: " + dec2bin(squareA[3]));
-                                    //console.log("C0: " + dec2bin(squareC[0]));
-                                    //console.log("D1: " + dec2bin(squareD[1]));
-                                    //console.log(corner0);
-                                      if (corner1 == 1)
-                                      {
-                                          //end = true;
-                                        corner2 = 0;
-                                        if ( squareA[0] % 2 == 1) corner2++;
-                                        if ( squareD[0] % 2 == 1) corner2++;
-                                        if ( squareE[1] % 2 == 1) corner2++;
+                                                {
+                                                //check if the corner0 has exactly one of the three possible fields from the three squares
+                                                cornerF0 = 0;
+                                                if ( squareF[0] % 2 == 1 ) cornerF0++;
+                                                if ( squareC[3] % 2 == 1 ) cornerF0++;
+                                                if ( squareD[2] % 2 == 1 ) cornerF0++;
+                                                if (cornerF0 == 1)
+                                                {
+                                                  cornerF1 = 0;
+                                                  if ( squareF[1] % 2 == 1) cornerF1++;
+                                                  if ( squareB[3] % 2 == 1) cornerF1++;
+                                                  if ( squareC[2] % 2 == 1) cornerF1++;
+                                                  if (cornerF1 == 1)
+                                                  {
+ //end = true; 
+                                                    cornerF2 = 0;
+                                                    if ( squareF[2] % 2 == 1) cornerF2++;
+                                                    if ( squareB[3] % 2 == 1) cornerF2++;
+                                                    if ( squareE[3] % 2 == 1) cornerF2++;
                                     //console.log("A0: " + squareDec2bin(squareA));
                                     //console.log("D0: " + squareDec2bin(squareD));
                                     //console.log("E1: " + squareDec2bin(squareE));
                                     //console.log(corner2);
 
-                                        if (corner2 == 1)
+                                        if (cornerF2 == 1)
                                         {
-                                          corner3 = 0;
-                                          if ( squareA[1] % 2 == 1) corner3++;
-                                          if ( squareB[1] % 2 == 1) corner3++;
-                                          if ( squareE[0] % 2 == 1) corner3++;
+                                             //      end = true;
+                                          cornerF3 = 0;
+                                          if ( squareF[3] % 2 == 1) cornerF3++;
+                                          if ( squareE[2] % 2 == 1) cornerF3++;
+                                          if ( squareD[3] % 2 == 1) cornerF3++;
 
-                                          if (corner3 == 1)
-                                            end = true;
+                                          if (cornerF3 == 1)
+  end = true;
                                         
                                         }
 
@@ -215,7 +208,7 @@ function solveCube(cube)
                             }                                          
                                           
                                           {
-                                            end = true;
+                                           // end = true;
                                           }
                                         }
 }
@@ -239,6 +232,8 @@ function solveCube(cube)
     }
   }
 
+
+//TODO: count solutions
   fillHtmlSquare(squareB, "bb");
   fillHtmlSquare(squareC, "cc");
   fillHtmlSquare(squareD, "dd");
