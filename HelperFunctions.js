@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   changeFieldColor("#afafaf", "button");
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#ffff00", "#yellow");
+    changeFieldColor("#fcfc77", "#yellow");
     changeFieldColor("#ffa20b", "#orange");
     changeFieldColor("#fa7777", "#red");
     changeFieldColor("#ff7cff", "#purple");
@@ -43,7 +43,7 @@ function load(color)
   }
   if (color == "yellow")
   {
-    changeFieldColor("#ffff00", "button");
+    changeFieldColor("#fcfc77", "button");
   
     selected = yellow;
   }
@@ -68,7 +68,7 @@ function load(color)
 
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#ffff00", "#yellow");
+    changeFieldColor("#fcfc77", "#yellow");
     changeFieldColor("#ffa20b", "#orange");
     changeFieldColor("#fa7777", "#red");
     changeFieldColor("#ff7cff", "#purple");
@@ -90,7 +90,7 @@ function fillHtmlCube(cube)
   pos = "abcdef";
   for (var i=0; i<6; i++)
   {
-    console.log(cube[i] +" " +pos.charAt(i));
+    //console.log(cube[i] +" " +pos.charAt(i));
     fillHtmlSquare(cube[i], pos.charAt(i), "white");
   }
 }
@@ -137,12 +137,12 @@ function getBitRow(row)
 
 function printBitSquare(square)
 {
-  console.log("**************");
-  console.log("1 -> " + getBitRow(square[0]) + " <- 0");
-  console.log("     " + getBit(square[1], 1) + "   " + getBit(square[3], 3));
-  console.log("     " + getBit(square[1], 2) + "   " + getBit(square[3], 2));
-  console.log("     " + getBit(square[1], 3) + "   " + getBit(square[3], 1));
-  console.log("2 -> " + getBit(square[2], 4)+""+getBit(square[2], 3)+""+getBit(square[2], 2)+""+getBit(square[2], 1)+""+getBit(square[2], 0) + " <- 3");
+  console.log("*******************");
+  console.log("1 -> " + getBit(square[0], 0) + " " + getBit(square[0], 1) + " " + getBit(square[0], 2) + " " + getBit(square[0], 3) + " " + getBit(square[0], 4) + " <- 0");
+  console.log("     " + getBit(square[1], 1) + "       " + getBit(square[3], 3));
+  console.log("     " + getBit(square[1], 2) + "       " + getBit(square[3], 2));
+  console.log("     " + getBit(square[1], 3) + "       " + getBit(square[3], 1));
+  console.log("2 -> " + getBit(square[2], 4)+" " + getBit(square[2], 3) + " " + getBit(square[2], 2)+ " " + getBit(square[2], 1) + " " + getBit(square[2], 0) + " <- 3");
 
 }
 

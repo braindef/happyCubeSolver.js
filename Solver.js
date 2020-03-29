@@ -43,6 +43,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
             
             squareC = rotateSquare(flippedSquareC, j3);
             
+            
             if (checkEdgeTree(squareB[3], squareC[1]))
             {
               for (var k1 = 0; k1 < 6; k1++)
@@ -66,7 +67,6 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                     squareD = rotateSquare(flippedSquareD, k3);
                     if (checkEdgeTree(squareC[3], squareD[1]))
                     {
-
                       for (var l1 = 0; l1 < 6; l1++)
                       {
                         if (end) break;
@@ -90,6 +90,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                             if ( (checkEdgeTree(squareD[3], squareE[1])) &&
                                  (checkEdgeTree(squareE[3], squareB[1])) )
                             {
+                              //end=true;
                               for (var m1 = 0; m1 < 6; m1++)
                               {
                                 if (end) break;
@@ -257,12 +258,19 @@ fillHtmlSquare(squareF, "ff", "white");
 
 function checkEdgeTree(edgeA, edgeB)
 {
-  for ( var i = 1; i < 3; i++)
-    if (!((getBit(edgeA, i) == "0" && getBit(edgeB, i) == "1")||
-         ( getBit(edgeA, i) == "1" && getBit(edgeB, i) == "0")) )
+  for ( var i = 0; i < 5; i++)
+  {
+    bit1 = getBit(edgeA, i);
+    bit2 = getBit(edgeB, 4-i);  //since it is noted clockwise we need to revrse the order
+    if ( (i==0 || i==4) && (bit1 + bit2) > 1 )
     {
       return false;
     }
+    if ( (i==1 || i==2 || i==3) && !((bit1 + bit2) >= 1) )
+    {
+      return false;
+    }
+  }
   return true;
 }
 
