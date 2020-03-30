@@ -7,7 +7,6 @@ var debug = 1;
 var selected = 0;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-  console.log("start");
   
   selected = new Empty();
   
@@ -79,7 +78,7 @@ function drawSquare(cube, square, placement, symbol)
 
 
 
-function changeFieldColor(color, item){
+function changeButtonsColor(color, item){
     Array.from(document.querySelectorAll(item)).map(function(button) {
                button.style.backgroundColor=color;
     })

@@ -1,5 +1,3 @@
-//               oben,   links,   unten,   rechts
-//               rotate square clockwise
 
 class Empty{
   constructor() 
@@ -11,7 +9,7 @@ class Empty{
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data  = 
 [ [ 0b01011, 0b11110, 0b01111, 0b11111 ],
@@ -20,6 +18,10 @@ class Empty{
   [ 0b11111, 0b11111, 0b11111, 0b11111 ],
   [ 0b11111, 0b11111, 0b11111, 0b11111 ],
   [ 0b11111, 0b11111, 0b11111, 0b11111 ] ];
+//  edges:
+
+//   upper,   left,    lower,   right
+//  rotate square clockwise
 
   }
 
@@ -37,7 +39,7 @@ class Blue {
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b00100, 0b00100, 0b00100, 0b00100 ],
@@ -59,7 +61,7 @@ class Green {
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b00101, 0b00100, 0b00100, 0b11010 ],
@@ -81,7 +83,7 @@ class Yellow {
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b10101, 0b11011, 0b00101, 0b11010 ],
@@ -99,11 +101,11 @@ class Orange {
     this.name = "orange";
 
     this.outerColor = "#ffa20b";
-    this.innerColor = "#efa200";
+    this.innerColor = "#ef9200";
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b10101, 0b00011, 0b01010, 0b11010 ],
@@ -117,7 +119,7 @@ class Orange {
 
 
 
-class red {
+class Red {
   constructor() 
   {
     this.name = "red";
@@ -127,7 +129,7 @@ class red {
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b00100, 0b11000, 0b10101, 0b01011 ],
@@ -152,7 +154,7 @@ class Purple {
 
     this.background = "";
 
-    this.symbols = [ "A", "B", "c", "D", "E", "F" ];
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
 
     this.data =
 [ [ 0b10110, 0b00111, 0b10100, 0b00111 ],
@@ -230,8 +232,8 @@ class Animals {
   {
     this.name = "animals";
 
-    this.outerColor = "#aaf400";
-    this.innerColor = "#9ae400";
+    this.outerColor = "#fcfcaa";
+    this.innerColor = "#ecec9a";
 
     this.background = "";
 
@@ -253,8 +255,8 @@ class Smiley {
   {
     this.name = "smiley";
 
-    this.outerColor = "#aaf400";
-    this.innerColor = "#9ae400";
+    this.outerColor = "#ff7f2a";
+    this.innerColor = "#ef6f1a";
 
     this.background = "";
 
@@ -276,8 +278,8 @@ class Transport {
   {
     this.name = "transport";
 
-    this.outerColor = "#aaf400";
-    this.innerColor = "#9ae400";
+    this.outerColor = "#ea0000";
+    this.innerColor = "#ca0000";
 
     this.background = "";
 
@@ -298,8 +300,8 @@ class Shapes {
   {
     this.name = "shapes";
 
-    this.outerColor = "#aaf400";
-    this.innerColor = "#9ae400";
+    this.outerColor = "#af7caf";
+    this.innerColor = "#9f6c9f";
 
     this.background = "";
 

@@ -16,7 +16,7 @@ button, input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   vertical-align: middle;
-  background-color: #afdde9;
+  /*background-color: #afdde9;*/
 }
 
 .selected {
