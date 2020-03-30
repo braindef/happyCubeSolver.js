@@ -36,7 +36,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function load(color)
 {
+  
     selectedSymbols = defaultSymbols;
+
+  if (color == "empty")
+  {
+    changeFieldColor("#afafaf", "button");
+
+    selected = empty;
+  }
   if (color == "blue")
   {
     changeFieldColor("#afdde9", "button");
@@ -139,6 +147,7 @@ function load(color)
     
     
     changeFieldColor("#000000", "#solve");
+    changeFieldColor("#afafaf", "#empty");
     
     fillHtmlCube(selected, selectedSymbols);
 }
@@ -183,6 +192,8 @@ function fillHtmlSquare(square, placement, color, symbol)
     document.getElementById(placement+"22").innerHTML = symbol;
     
     //printBitSquare(square); 
+    
+    printBitSquare(square);
 }
 
 
@@ -205,12 +216,12 @@ function getBitRow(row)
 
 function printBitSquare(square)
 {
-  console.log("*******************");
-  console.log("1 -> " + getBit(square[0], 0) + " " + getBit(square[0], 1) + " " + getBit(square[0], 2) + " " + getBit(square[0], 3) + " " + getBit(square[0], 4) + " <- 0");
+  console.log("*******************");  //TODO: arrow from lsb horizontal TODO: reverse order 
+  console.log("1 -> " + getBit(square[0], 4) + " " + getBit(square[0], 3) + " " + getBit(square[0], 2) + " " + getBit(square[0], 1) + " " + getBit(square[0], 0) + " <- 0");
   console.log("     " + getBit(square[1], 1) + "       " + getBit(square[3], 3));
   console.log("     " + getBit(square[1], 2) + "       " + getBit(square[3], 2));
   console.log("     " + getBit(square[1], 3) + "       " + getBit(square[3], 1));
-  console.log("2 -> " + getBit(square[2], 4)+" " + getBit(square[2], 3) + " " + getBit(square[2], 2)+ " " + getBit(square[2], 1) + " " + getBit(square[2], 0) + " <- 3");
+  console.log("2 -> " + getBit(square[2], 0)+" " + getBit(square[2], 1) + " " + getBit(square[2], 2)+ " " + getBit(square[2], 3) + " " + getBit(square[2], 4) + " <- 3");
 
 }
 

@@ -5,6 +5,13 @@ var debug = false;
 //               oben,   links,   unten,   rechts
 //               rotate square clockwise
 
+var empty =  [ [ 0b11011, 0b11111, 0b01111, 0b11111 ],
+               [ 0b11111, 0b11111, 0b11111, 0b11111 ],
+               [ 0b11111, 0b11111, 0b11111, 0b11111 ],
+               [ 0b11111, 0b11111, 0b11111, 0b11111 ],
+               [ 0b11111, 0b11111, 0b11111, 0b11111 ],
+               [ 0b11111, 0b11111, 0b11111, 0b11111 ] ];
+
 var blue =   [ [ 0b00100, 0b00100, 0b00100, 0b00100 ],
                [ 0b11011, 0b00101, 0b01010, 0b11010 ],
                [ 0b11010, 0b01011, 0b00100, 0b01010 ],
@@ -108,6 +115,6 @@ var shapes = [ [ 0b01010, 0b01010, 0b00100, 0b01010 ],
                [ 0b11011, 0b00101, 0b00100, 0b10100 ] ];
 var shapeSymbols = [ "😄", "😢", "☺️", "😐", "😮", "☹️" ];
                
-var selected = nature;
+var selected = empty;
 var selectedSymbols = defaultSymbols;
 
