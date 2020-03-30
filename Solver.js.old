@@ -1,10 +1,10 @@
 
 
 
-function solveCube(cube)
+function solveCube(cube, symbols)
 {
    console.log("*-*-*-*-*-*-*-*-*-*-*-*-");
-   printBitSquare(cube.data[0]);
+   printBitSquare(cube[0]);
 
 var squareA = [ 0b0, 0b0, 0b0, 0b0 ];
 var squareB = [ 0b0, 0b0, 0b0, 0b0 ];
@@ -18,8 +18,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
   {
     if (end) break;
  
-      squareB = cube.data[i1].slice();
-      squareBsymbol = cube.symbols[i1];
+      squareB = cube[i1].slice();
+      squareBsymbol = symbols[i1];
 
  // 6 flächen (wenn schon gebraucht = continue), flippen, drehen, flächen kontrollieren
     
@@ -33,12 +33,12 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
         {
           if (end) break;
 
-          flippedSquareC = cube.data[j1].slice();
-          squareCsymbol = cube.symbols[j1];
+          flippedSquareC = cube[j1].slice();
+          squareCsymbol = symbols[j1];
           
           if (j2 == 1)
           {
-            flippedSquareC = flipSquare(cube.data[j1]);
+            flippedSquareC = flipSquare(cube[j1]);
           }
  
           for (var j3 = 0; j3 < 4; j3++)
@@ -61,11 +61,12 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                 {
                   if (end) break;
 
-                  flippedSquareD = cube.data[k1].slice();
+                  flippedSquareD = cube[k1].slice();
+                  squareDsymbol = symbols[k1];
 
-                  squareDsymbol = cube.symbols[k1];
+                  squareDsymbol = symbols[k1];
                   if (k2 == 1)
-                    flippedSquareD = flipSquare(cube.data[k1]);
+                    flippedSquareD = flipSquare(cube[k1]);
                   for (var k3 = 0; k3 < 4; k3++)
                   {
                     if (end) break;
@@ -86,10 +87,10 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                         {
                           if (end) break;
 
-                          flippedSquareE = cube.data[l1].slice();
-                          squareEsymbol = cube.symbols[l1];
+                          flippedSquareE = cube[l1].slice();
+                          squareEsymbol = symbols[l1];
                           if (l2 == 1)
-                            flippedSquareE = flipSquare(cube.data[l1]);
+                            flippedSquareE = flipSquare(cube[l1]);
                           for (var l3 = 0; l3 < 4; l3++)
                           {
                             if (end) break;
@@ -112,10 +113,10 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                 {
 
                                   if (end) break;
-                                  flippedSquareA = cube.data[m1].slice();
-                                  squareAsymbol = cube.symbols[m1];
+                                  flippedSquareA = cube[m1].slice();
+                                  squareAsymbol = symbols[m1];
                                   if (m2 == 1)
-                                    flippedSquareA = flipSquare(cube.data[m1]);
+                                    flippedSquareA = flipSquare(cube[m1]);
                                   for (var m3 = 0; m3 < 4; m3++)
                                   {
                                     if (end) break;
@@ -179,11 +180,11 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                               {
                                                 if (end) break;
 
-                                                flippedSquareF = cube.data[n1].slice();
-                                                squareFsymbol = cube.symbols[n1];
+                                                flippedSquareF = cube[n1].slice();
+                                                squareFsymbol = symbols[n1];
 
                                                 if (n2 == 1)
-                                                  flippedSquareF = flipSquare(cube.data[n1]);
+                                                  flippedSquareF = flipSquare(cube[n1]);
                                                 for (var n3 = 0; n3 < 4; n3++)
                                                 {
                                                   if (end) break;
@@ -254,12 +255,14 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
   if (!end) return false;  //TODO: check A and B edge  //TODO: count solutions
   //TODO: count solutions
-  drawSquare(cube, squareB, "B", squareBsymbol);
-  drawSquare(cube, squareC, "C", squareCsymbol);
-  drawSquare(cube, squareD, "D", squareDsymbol);
-  drawSquare(cube, squareE, "E", squareEsymbol);
-  drawSquare(cube, squareA, "A", squareAsymbol);
-  drawSquare(cube, squareF, "F", squareFsymbol);
+  fillHtmlSquare(squareB, "bb", "white", squareBsymbol);
+  fillHtmlSquare(squareC, "cc", "white", squareCsymbol);
+  fillHtmlSquare(squareD, "dd", "white", squareDsymbol);
+  fillHtmlSquare(squareE, "ee", "white", squareEsymbol);
+  fillHtmlSquare(squareA, "aa", "white", squareAsymbol);
+  fillHtmlSquare(squareF, "ff", "white", squareFsymbol);
+
+
 
 }
 

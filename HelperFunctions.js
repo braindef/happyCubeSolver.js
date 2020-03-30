@@ -1,156 +1,83 @@
 
 
-//fields in html code
-/*
-fields = [["f00", "f01", "f02", "f03", "f04"],
-          ["f10", "f11", "f12", "f13", "f14"],
-          ["f20", "f21", "f22", "f23", "f24"],
-          ["f30", "f31", "f32", "f33", "f34"],
-          ["f40", "f41", "f42", "f43", "f44"]];
-*/
+var selected = 0;
 
+var debug = 1;
+
+var selected = 0;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-
-  changeFieldColor("#afafaf", "button");
-    changeFieldColor("#afdde9", "#blue");
-    changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#fcfc77", "#yellow");
-    changeFieldColor("#ffa20b", "#orange");
-    changeFieldColor("#fa7777", "#red");
-    changeFieldColor("#ff7cff", "#purple");
-    changeFieldColor("#afafff", "#nature");
-    changeFieldColor("#00af00", "#fruits");
-    changeFieldColor("#fcfcaa", "#animals");
-    changeFieldColor("#ff7f2a", "#smiley");
-    changeFieldColor("#fa0000", "#transport");
-    changeFieldColor("#af7caf", "#shapes");
-
-    changeFieldColor("#000000", "#solve");
+  console.log("start");
   
-  fillHtmlCube(selected, selectedSymbols);
+  selected = new Empty();
+  
+  load(selected);
   
 });
 
 
+function load(cube)
+{
+  if (debug>0) console.log("load(cube)");
+  
+  selected = cube;
+  
+  drawCube(selected);
+}
 
-function load(color)
+
+function drawCube(cube)
+{
+  if (debug>0) console.log("drawCube(cube)");
+
+  pos = "abcdef";
+
+
+  for (var i=0; i<6; i++)
+  {
+    drawSquare(cube, cube.data[i], pos.charAt(i), cube.symbols[i]);
+  }
+}
+
+
+//TODO in a loop with different field vars
+function drawSquare(cube, square, placement, symbol)
 {
   
-    selectedSymbols = defaultSymbols;
-
-  if (color == "empty")
-  {
-    changeFieldColor("#afafaf", "button");
-
-    selected = empty;
-  }
-  if (color == "blue")
-  {
-    changeFieldColor("#afdde9", "button");
+  row = [ 0b0, 0b0, 0b0, 0b0 ];
   
-    selected = blue;
-  }
-  if (color == "green")
-  {
-    changeFieldColor("#aaf400", "button");
-  
-    selected = green;
-  }
-  if (color == "yellow")
-  {
-    changeFieldColor("#fcfc77", "button");
-  
-    selected = yellow;
-  }
-  if (color == "orange")
-  {
-    changeFieldColor("#ffa20b", "button");
-  
-    selected = orange;
-  }
-  if (color == "red")
-  {
-    changeFieldColor("#fa7777", "button");
-  
-    selected = red;
-  }
-  if (color == "purple")
-  {
-    changeFieldColor("#ff7cff", "button");
-  
-    selected = purple;
-  }
-
-  if (color == "nature")
-  {
-    changeFieldColor("#afafe9", "button");
-  
-    selected = purple;
-    selectedSymbols = natureSymbols;
-  }
-  
-  if (color == "fruits")
-  {
-    changeFieldColor("#00af00", "button");
-  
-    selected = purple;
-    selectedSymbols = fruitSymbols;
-  }
-  
-  if (color == "animals")
-  {
-    changeFieldColor("#fcfcaa", "button");
-  
-    selected = animals;
-    selectedSymbols = animalSymbols;
-  }
-  
-  if (color == "smiley")
-  {
-    changeFieldColor("#ff7f2a", "button");
-  
-    selected = smiley;
-    selectedSymbols = smileySymbols;
-  }
-  
-  if (color == "transport")
-  {
-    changeFieldColor("#fa0000", "button");
-  
-    selected = transport;
-    selectedSymbols = transportSymbols;
-  }
-
-  if (color == "shapes")
-  {
-    changeFieldColor("#af7caf", "button");
-  
-    selected = shapes;
-    selectedSymbols = shapeSymbols;
-  }
-  
-  
-
-    changeFieldColor("#afdde9", "#blue");
-    changeFieldColor("#aaf400", "#green");
-    changeFieldColor("#fcfc77", "#yellow");
-    changeFieldColor("#ffa20b", "#orange");
-    changeFieldColor("#fa7777", "#red");
-    changeFieldColor("#ff7cff", "#purple");
-    changeFieldColor("#afafff", "#nature");
-    changeFieldColor("#00af00", "#fruits");
-    changeFieldColor("#fcfcaa", "#animals");
-    changeFieldColor("#ff7f2a", "#smiley");
-    changeFieldColor("#fa0000", "#transport");
-    changeFieldColor("#af7caf", "#shapes");
+  for (var i = 0; i < 4; i++)
+    for (var j = 0; j < 5; j++)
+    {                 // aa 0 1
+      row[0] = placement + "0" + (4-j);   //top
+      row[1] = placement + j + "0";       //left
+      row[2] = placement + "4" + j;       //bottom
+      row[3] = placement + (4-j) + "4";   //right
+      
+      if (debug > 4) console.log(row[i]);
+      
+      if (getBit(square[i], j))
+        document.getElementById(row[i]).style.backgroundColor = cube.outerColor;
+      else      
+        document.getElementById(row[i]).style.backgroundColor = "white";
+    }
     
+    for (var k = 1; k < 4; k++)
+      for (var l = 1; l < 4; l++)
+      {
+        field = placement+k+l;
+        
+        document.getElementById(placement+k+l).style.backgroundColor = cube.innerColor;
+      } 
     
-    changeFieldColor("#000000", "#solve");
-    changeFieldColor("#afafaf", "#empty");
+    document.getElementById(placement+"22").innerHTML = symbol;
     
-    fillHtmlCube(selected, selectedSymbols);
+    //printBitSquare(square); 
+    //console.log("fillHtmlSquare()");
+    //printBitSquare(square);
 }
+
+
 
 function changeFieldColor(color, item){
     Array.from(document.querySelectorAll(item)).map(function(button) {
@@ -158,43 +85,6 @@ function changeFieldColor(color, item){
     })
 }
 
-
-
-function fillHtmlCube(cube, symbols)
-{
-  pos = "abcdef";
-  for (var i=0; i<6; i++)
-  {
-    //console.log(cube[i] +" " +pos.charAt(i));
-    fillHtmlSquare(cube[i], pos.charAt(i), "white", symbols[i]);
-  }
-}
-
-
-//TODO in a loop with different field vars
-function fillHtmlSquare(square, placement, color, symbol)
-{
-  row = [ 0b0, 0b0, 0b0, 0b0 ];
-  for (var i = 0; i < 4; i++)
-    for (var j = 0; j < 5; j++)
-    {                 // aa 0 1
-      row[0] = placement + "0" + (4-j);     //top
-      row[1] = placement + j + "0";       //left
-      row[2] = placement + "4" + j;       //bottom
-      row[3] = placement + (4-j) + "4";
-      
-      if (!getBit(square[i], j))
-      {
-        document.getElementById(row[i]).style.backgroundColor = color;
-      }
-    }
-    
-    document.getElementById(placement+"22").innerHTML = symbol;
-    
-    //printBitSquare(square); 
-    
-    printBitSquare(square);
-}
 
 
 function getBit(row, bitPosition)
