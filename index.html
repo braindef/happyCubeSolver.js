@@ -3,6 +3,10 @@
     <meta charset="UTF-8">
     <title>Happy Cube Solver</title>
 
+<script type='text/javascript' > 
+  var selected = false; 
+</script>
+
     <script defer src="./HelperFunctions.js" charset="UTF-8"></script>
     <script defer src="./Cubes.js" charset="UTF-8"></script>
     <script defer src="./Solver.js" charset="UTF-8"></script>
@@ -16,40 +20,33 @@
 
 <div class=outer>
 
-<div class=container>
-<div class=buttons>
-  <button onclick='load(new Blue)' style='width:200; background-color: "#afdde9"'>blue</button><br>
-  <button onclick='load(new Green)' style='width:200; background-color: "#aaf400"'>green</button><br>
-  <button onclick='load(new Yellow)' style='width:200; background-color: "#fcfc77"'>yellow</button><br>
-  <button onclick='load(new Orange)' style='width:200; background-color: "#ffa20b"'>orange</button><br>
-  <button onclick='load(new Red)' style='width:200; background-color: "#ffa20b"'>red</button><br>
-  <button onclick='load(new Purple)' style='width:200; background-color: "#ff7cff"'>purple</button><br>
-</div>
+  <div class=container>
+    <div class=buttons>
+      <button onclick='load(new Blue)' style='width:200; background-color: #afdde9;'>blue</button><br>
+      <button onclick='load(new Green)' style='width:200; background-color: #aaf400'>green</button><br>
+      <button onclick='load(new Yellow)' style='width:200; background-color: #fcfc77'>yellow</button><br>
+      <button onclick='load(new Orange)' style='width:200; background-color: #ffa20b'>orange</button><br>
+      <button onclick='load(new Red)' style='width:200; background-color: "#ffa20b'>red</button><br>
+      <button onclick='load(new Purple)' style='width:200; background-color: #ff7cff'>purple</button><br>
+    </div>
 
-<div class=buttons>
-  <button onclick='load(new Nature)' style='width:200; background-color: "#afafff"'>nature</button><br>
-  <button onclick='load(new Fruits)' style='width:200; background-color: "#00af00"'>fruits</button><br>
-  <button onclick='load(new Animals)' style='width:200; background-color: "#aaf400"'>animals</button><br>
-  <button onclick='load(new Smiley)' style='width:200; background-color: "#aaf400"'>smiley</button><br>
-  <button onclick='load(new Transport)' style='width:200; background-color: "#aaf400"'>transport</button><br>
-  <button onclick='load(new Shapes)' style='width:200; background-color: "#aaf400"'>shapes</button><br>
-</div>
+    <div class=buttons>
+      <button onclick='load(new Nature)' style='width:200; background-color: #afafff'>nature</button><br>
+      <button onclick='load(new Fruits)' style='width:200; background-color: #00af00'>fruits</button><br>
+      <button onclick='load(new Animals)' style='width:200; background-color: #fcfcaa'>animals</button><br>
+      <button onclick='load(new Smiley)' style='width:200; background-color: #ff7f2a'>smiley</button><br>
+      <button onclick='load(new Transport)' style='width:200; background-color: #ea0000'>transport</button><br>
+      <button onclick='load(new Shapes)' style='width:200; background-color: #af7caf'>shapes</button><br>
+    </div>
 
+    </div>
+  </div>
 
-<div class=buttons>
-  <button onclick='load(new Nature)' style='width:200; background-color: "#afafff"'>nature</button><br>
-  <button onclick='load(new Fruits)' style='width:200; background-color: "#00af00"'>fruits</button><br>
-  <button onclick='load(new Animals)' style='width:200; background-color: "#aaf400"'>animals</button><br>
-  <button onclick='load(new Smiley)' style='width:200; background-color: "#aaf400"'>smiley</button><br>
-  <button onclick='load(new Transport)' style='width:200; background-color: "#aaf400"'>transport</button><br>
-  <button onclick='load(new Shapes)' style='width:200; background-color: "#aaf400"'>shapes</button><br>
-</div>
-</div>
-</div>
+  <div class=newline>
+  </div>
+<br>
+<br>
 
-<div class=newline>
-</div>
-<br><hr>
 
 <div class=container>
   <div class=square>

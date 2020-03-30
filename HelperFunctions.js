@@ -1,6 +1,6 @@
 
 
-var selected = 0;
+//var selected = 0;
 
 var debug = 1;
 
@@ -120,4 +120,7 @@ function getVarName(v) {
             return key;
     }
 }
+
+
+
 
