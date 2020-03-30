@@ -199,28 +199,26 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                     if (squareF[0] % 2 == 1) cornerF0++;
                                                     if (squareC[3] % 2 == 1) cornerF0++;
                                                     if (squareD[2] % 2 == 1) cornerF0++;
-                                                    console.log("cF0= "+cornerF0);
+
                                                     if (cornerF0 == 1)
                                                     {
                                                       cornerF1 = 0;
                                                       if (squareF[1] % 2 == 1) cornerF1++;
                                                       if (squareC[2] % 2 == 1) cornerF1++;
                                                       if (squareB[3] % 2 == 1) cornerF1++;
-                                                      console.log("cF1= "+cornerF1);
+
                                                       if (cornerF1 == 1)
                                                       {
                                                         cornerF2 = 0;
                                                         if (squareF[2] % 2 == 1) cornerF2++;
                                                         if (squareE[3] % 2 == 1) cornerF2++;
                                                         if (squareB[2] % 2 == 1) cornerF2++;
-                                                        console.log("cF2= "+cornerF2);
                                                         if (cornerF2 == 1)
                                                         {
                                                           cornerF3 = 0;
                                                           if (squareF[3] % 2 == 1) cornerF3++;
                                                           if (squareE[2] % 2 == 1) cornerF3++;
                                                           if (squareD[3] % 2 == 1) cornerF3++;
-                                                          console.log("cF2= "+cornerF3);
                                                           if (cornerF3 == 1)
                                                           {
                                                             end = true;
