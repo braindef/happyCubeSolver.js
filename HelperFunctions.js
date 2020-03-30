@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     changeFieldColor("#ffa20b", "#orange");
     changeFieldColor("#fa7777", "#red");
     changeFieldColor("#ff7cff", "#purple");
+    changeFieldColor("#afafff", "#nature");
+    changeFieldColor("#00af00", "#fruits");
     changeFieldColor("#000000", "#solve");
   
-  fillHtmlCube(selected);
+  fillHtmlCube(selected, selectedSymbols);
   
 });
 
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function load(color)
 {
+    selectedSymbols = defaultSymbols;
   if (color == "blue")
   {
     changeFieldColor("#afdde9", "button");
@@ -66,15 +69,36 @@ function load(color)
     selected = purple;
   }
 
+  if (color == "nature")
+  {
+    changeFieldColor("#afafe9", "button");
+  
+    selected = purple;
+    selectedSymbols = natureSymbols;
+  }
+  
+  if (color == "fruits")
+  {
+    changeFieldColor("#00af00", "button");
+  
+    selected = purple;
+    selectedSymbols = fruitSymbols;
+  }
+  
+  
+
     changeFieldColor("#afdde9", "#blue");
     changeFieldColor("#aaf400", "#green");
     changeFieldColor("#fcfc77", "#yellow");
     changeFieldColor("#ffa20b", "#orange");
     changeFieldColor("#fa7777", "#red");
     changeFieldColor("#ff7cff", "#purple");
+    changeFieldColor("#afafff", "#nature");
+    changeFieldColor("#00af00", "#fruit");
+    
     changeFieldColor("#000000", "#solve");
     
-    fillHtmlCube(selected);
+    fillHtmlCube(selected, selectedSymbols);
 }
 
 function changeFieldColor(color, item){
@@ -85,26 +109,26 @@ function changeFieldColor(color, item){
 
 
 
-function fillHtmlCube(cube)
+function fillHtmlCube(cube, symbols)
 {
   pos = "abcdef";
   for (var i=0; i<6; i++)
   {
     //console.log(cube[i] +" " +pos.charAt(i));
-    fillHtmlSquare(cube[i], pos.charAt(i), "white");
+    fillHtmlSquare(cube[i], pos.charAt(i), "white", symbols[i]);
   }
 }
 
 
 //TODO in a loop with different field vars
-function fillHtmlSquare(square, placement, color)
+function fillHtmlSquare(square, placement, color, symbol)
 {
   row = [ 0b0, 0b0, 0b0, 0b0 ];
   for (var i = 0; i < 4; i++)
     for (var j = 0; j < 5; j++)
     {                 // aa 0 1
       row[0] = placement + "0" + (4-j);     //top
-      row[1] = placement + j + "0";   //left
+      row[1] = placement + j + "0";       //left
       row[2] = placement + "4" + j;       //bottom
       row[3] = placement + (4-j) + "4";
       
@@ -113,6 +137,8 @@ function fillHtmlSquare(square, placement, color)
         document.getElementById(row[i]).style.backgroundColor = color;
       }
     }
+    
+    document.getElementById(placement+"22").innerHTML = symbol;
     
     //printBitSquare(square); 
 }

@@ -1,7 +1,7 @@
 
 
 
-function solveCube(cube)
+function solveCube(cube, symbols)
 {
 
 
@@ -18,6 +18,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
     if (end) break;
  
       squareB = cube[i1].slice();
+      squareBsymbol = symbols[i1];
 
  // 6 flächen (wenn schon gebraucht = continue), flippen, drehen, flächen kontrollieren
     
@@ -32,6 +33,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
           if (end) break;
 
           flippedSquareC = cube[j1].slice();
+          squareCsymbol = symbols[j1];
+          
           if (j2 == 1)
           {
             flippedSquareC = flipSquare(cube[j1]);
@@ -58,6 +61,9 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                   if (end) break;
 
                   flippedSquareD = cube[k1].slice();
+                  squareDsymbol = symbols[k1];
+
+                  squareDsymbol = symbols[k1];
                   if (k2 == 1)
                     flippedSquareD = flipSquare(cube[k1]);
                   for (var k3 = 0; k3 < 4; k3++)
@@ -65,6 +71,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                     if (end) break;
 
                     squareD = rotateSquare(flippedSquareD, k3);
+                    
                     if (checkEdgeTree(squareC[3], squareD[1]))
                     {
                       for (var l1 = 0; l1 < 6; l1++)
@@ -80,6 +87,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                           if (end) break;
 
                           flippedSquareE = cube[l1].slice();
+                          squareEsymbol = symbols[l1];
                           if (l2 == 1)
                             flippedSquareE = flipSquare(cube[l1]);
                           for (var l3 = 0; l3 < 4; l3++)
@@ -105,6 +113,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
                                   if (end) break;
                                   flippedSquareA = cube[m1].slice();
+                                  squareAsymbol = symbols[m1];
                                   if (m2 == 1)
                                     flippedSquareA = flipSquare(cube[m1]);
                                   for (var m3 = 0; m3 < 4; m3++)
@@ -171,6 +180,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                 if (end) break;
 
                                                 flippedSquareF = cube[n1].slice();
+                                                squareFsymbol = symbols[n1];
+
                                                 if (n2 == 1)
                                                   flippedSquareF = flipSquare(cube[n1]);
                                                 for (var n3 = 0; n3 < 4; n3++)
@@ -244,12 +255,12 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
   }
 
 //TODO: count solutions
-fillHtmlSquare(squareB, "bb", "white");
-fillHtmlSquare(squareC, "cc", "white");
-fillHtmlSquare(squareD, "dd", "white");
-fillHtmlSquare(squareE, "ee", "white");
-fillHtmlSquare(squareA, "aa", "white");
-fillHtmlSquare(squareF, "ff", "white"); 
+fillHtmlSquare(squareB, "bb", "white", squareBsymbol);
+fillHtmlSquare(squareC, "cc", "white", squareCsymbol);
+fillHtmlSquare(squareD, "dd", "white", squareDsymbol);
+fillHtmlSquare(squareE, "ee", "white", squareEsymbol);
+fillHtmlSquare(squareA, "aa", "white", squareAsymbol);
+fillHtmlSquare(squareF, "ff", "white", squareFsymbol);
 
 
 
