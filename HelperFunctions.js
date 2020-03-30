@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     changeFieldColor("#00af00", "#fruits");
     changeFieldColor("#fcfcaa", "#animals");
     changeFieldColor("#ff7f2a", "#smiley");
+    changeFieldColor("#fa0000", "#transport");
     
     changeFieldColor("#000000", "#solve");
   
@@ -104,6 +105,14 @@ function load(color)
     selectedSymbols = smileySymbols;
   }
   
+  if (color == "transport")
+  {
+    changeFieldColor("#fa0000", "button");
+  
+    selected = smiley;
+    selectedSymbols = smileySymbols;
+  }
+  
   
 
     changeFieldColor("#afdde9", "#blue");
@@ -116,6 +125,8 @@ function load(color)
     changeFieldColor("#00af00", "#fruits");
     changeFieldColor("#fcfcaa", "#animals");
     changeFieldColor("#ff7f2a", "#smiley");
+    changeFieldColor("#fa0000", "#transport");
+    
     
     changeFieldColor("#000000", "#solve");
     
