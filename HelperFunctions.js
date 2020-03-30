@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     changeFieldColor("#00af00", "#fruits");
     changeFieldColor("#fcfcaa", "#animals");
     changeFieldColor("#ff7f2a", "#smiley");
+    
     changeFieldColor("#000000", "#solve");
   
   fillHtmlCube(selected, selectedSymbols);
@@ -99,8 +100,8 @@ function load(color)
   {
     changeFieldColor("#ff7f2a", "button");
   
-    selected = purple;
-    selectedSymbols = fruitSymbols;
+    selected = smiley;
+    selectedSymbols = smileySymbols;
   }
   
   
