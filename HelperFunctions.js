@@ -121,6 +121,10 @@ function getVarName(v) {
     }
 }
 
+function show(division)
+{
+  var myDivision = document.getElementById(division);
 
-
+  myDivision.style.display = "block";
+}
 

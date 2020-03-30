@@ -265,6 +265,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
   drawSquare(cube, squareA, "A", squareAsymbol);
   drawSquare(cube, squareF, "F", squareFsymbol);
 
+  show("solution");
+
 }
 
 
