@@ -11,22 +11,26 @@
     <script defer src="./Cubes.js" charset="UTF-8"></script>
     <script defer src="./Solver.js" charset="UTF-8"></script>
     <script defer src="./Editor.js" charset="UTF-8"></script>
+    <script defer src="./modal.js" charset="UTF-8"></script>
 <!--    
     <script src="./alphabeta.js" charset="UTF-8"></script>-->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/modal.css">
   </head>
-  <body style="font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;">
+  <body>
 
 <div class=outer>
-
+<h1>Happy Cube Solver</h1>
+<h3>by Marc jr. Landolt</h3>
   <div class=container>
+<font size=5em color=blue>you can load a given squares from a predefined cube:</font><br><br>
+
     <div class=buttons>
       <button onclick='load(new Blue)' style='width:200; background-color: #afdde9;'>blue</button><br>
       <button onclick='load(new Green)' style='width:200; background-color: #aaf400'>green</button><br>
       <button onclick='load(new Yellow)' style='width:200; background-color: #fcfc77'>yellow</button><br>
       <button onclick='load(new Orange)' style='width:200; background-color: #ffa20b'>orange</button><br>
-      <button onclick='load(new Red)' style='width:200; background-color: "#ffa20b'>red</button><br>
+      <button onclick='load(new Red)' style='width:200; background-color: #ff5555'>red</button><br>
       <button onclick='load(new Purple)' style='width:200; background-color: #ff7cff'>purple</button><br>
     </div>
 
@@ -49,6 +53,7 @@
 
 
 <div class=container>
+<font size=5em color=blue>you can edit the squares by clicking on them:</font><br><br>
   <div class=square>
     <button id=a00> </button><button id=a01> </button><button id=a02> </button><button id=a03> </button><button id=a04> </button><br>
     <button id=a10> </button><button id=a11> </button><button id=a12> </button><button id=a13> </button><button id=a14> </button><br>
@@ -183,26 +188,19 @@
   </div>
 </div>
 
-<!-- The Modal Dialogbox selecting pawn replacement -->
-<div id="select" class="modal">
+
+
+<!-- The Modal Dialogbox for checkmate -->
+<div id="noSolution" class="modal">
+  <!-- Modal content -->
   <div class="modalContent">
-    <span class="close">&times;</span>
-    <p>Select the Figure for the Pawn the just arrived the other side of the Board</p>
-    <button id=s0 onClick="transformationFigure='♖'; continueTransformation()">♜</button>
-    <button id=s1>♞</button>
-    <button id=s2>♝</button>
-    <button id=s3>♛</button>
+    <span class="close"><font size=10em color=red>&times;</font></span>
+    <br>
+    <p>no Solution</p>
+    <br>
   </div>
 </div>
 
-<!-- The Modal Dialogbox for checkmate -->
-<div id="illegal" class="modal">
-  <!-- Modal content -->
-  <div class="modalContent">
-    <span class="close">&times;</span>
-    <p>Illegal Move</p>
-  </div>
-</div>
 <br><br><hr>
 <div>
 To get the numbering of the sites handled I had to use my labeling machine.

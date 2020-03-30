@@ -8,7 +8,7 @@ var selected = 0;
 
 document.addEventListener("DOMContentLoaded", function(event) { 
   
-  selected = new Empty();
+  selected = new Animals();
   
   load(selected);
   

@@ -252,7 +252,11 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
     }
   }
 
-  if (!end) return false;  //TODO: check A and B edge  //TODO: count solutions
+  if (!end)
+  {
+    openModal("noSolution");
+    return false;  //TODO: check A and B edge  //TODO: count solutions
+  }
   //TODO: count solutions
   drawSquare(cube, squareB, "B", squareBsymbol);
   drawSquare(cube, squareC, "C", squareCsymbol);

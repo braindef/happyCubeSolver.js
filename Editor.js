@@ -10,7 +10,7 @@ for (var i = 0; i < buttonsCount; i++) {
         for ( var i = 0; i < 6; i++)
         if (squares.substring(i,i+1) == this.id.substring(0,1))
         {
-          this.innerHTML = this.id.substring(0,1);
+          //this.innerHTML = this.id.substring(0,1);
           for ( var i = 0; i < 6; i++)
           if (this.id.substring(0,1) == squares.substring(i,i+1))
             toggle(selected, i, this.id.substring(2,3), this.id.substring(1,2));
