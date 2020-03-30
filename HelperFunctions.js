@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     changeFieldColor("#ff7cff", "#purple");
     changeFieldColor("#afafff", "#nature");
     changeFieldColor("#00af00", "#fruits");
+    changeFieldColor("#fcfcaa", "#animals");
+    changeFieldColor("#ff7f2a", "#smiley");
     changeFieldColor("#000000", "#solve");
   
   fillHtmlCube(selected, selectedSymbols);
@@ -85,6 +87,22 @@ function load(color)
     selectedSymbols = fruitSymbols;
   }
   
+  if (color == "animals")
+  {
+    changeFieldColor("#fcfcaa", "button");
+  
+    selected = animals;
+    selectedSymbols = animalSymbols;
+  }
+  
+  if (color == "smiley")
+  {
+    changeFieldColor("#ff7f2a", "button");
+  
+    selected = purple;
+    selectedSymbols = fruitSymbols;
+  }
+  
   
 
     changeFieldColor("#afdde9", "#blue");
@@ -94,7 +112,9 @@ function load(color)
     changeFieldColor("#fa7777", "#red");
     changeFieldColor("#ff7cff", "#purple");
     changeFieldColor("#afafff", "#nature");
-    changeFieldColor("#00af00", "#fruit");
+    changeFieldColor("#00af00", "#fruits");
+    changeFieldColor("#fcfcaa", "#animals");
+    changeFieldColor("#ff7f2a", "#smiley");
     
     changeFieldColor("#000000", "#solve");
     
