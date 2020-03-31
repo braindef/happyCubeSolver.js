@@ -3,15 +3,13 @@
 
 function solveCube(cube)
 {
-   console.log("*-*-*-*-*-*-*-*-*-*-*-*-");
-   printBitSquare(cube.data[0]);
 
-var squareA = [ 0b0, 0b0, 0b0, 0b0 ];
-var squareB = [ 0b0, 0b0, 0b0, 0b0 ];
-var squareC = [ 0b0, 0b0, 0b0, 0b0 ];
-var squareD = [ 0b0, 0b0, 0b0, 0b0 ];
-var squareE = [ 0b0, 0b0, 0b0, 0b0 ];
-var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareA = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareB = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareC = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareD = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareE = [ 0b0, 0b0, 0b0, 0b0 ];
+  var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
   end = false;
   for (var i1 = 0; i1 < 6; i1++)
@@ -48,7 +46,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
             squareC = rotateSquare(flippedSquareC, j3);
             
             
-            if (checkEdgeTree(squareB[3], squareC[1]))
+            if (checkEdge(squareB[3], squareC[1]))
             {
               for (var k1 = 0; k1 < 6; k1++)
               {
@@ -72,7 +70,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
 
                     squareD = rotateSquare(flippedSquareD, k3);
                     
-                    if (checkEdgeTree(squareC[3], squareD[1]))
+                    if (checkEdge(squareC[3], squareD[1]))
                     {
                       for (var l1 = 0; l1 < 6; l1++)
                       {
@@ -95,8 +93,8 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                             if (end) break;
 
                             squareE = rotateSquare(flippedSquareE, l3);
-                            if ( (checkEdgeTree(squareD[3], squareE[1])) &&
-                                 (checkEdgeTree(squareE[3], squareB[1])) )
+                            if ( (checkEdge(squareD[3], squareE[1])) &&
+                                 (checkEdge(squareE[3], squareB[1])) )
                             {
                               //end=true;
                               for (var m1 = 0; m1 < 6; m1++)
@@ -122,13 +120,21 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                     
                                     squareA = rotateSquare(flippedSquareA, m3);
                                     
+                                      //console.log("A0: " + getBitRow(squareA[0]) + " E0: " + getBitRow(squareE[0]) + " = " + checkEdge(squareA[0], squareB[0]) );
 
-                                    if ( (checkEdgeTree(squareA[0], squareE[0])) &&
-                                         (checkEdgeTree(squareA[1], squareB[0])) &&
-                                         (checkEdgeTree(squareA[2], squareC[0])) &&
-                                         (checkEdgeTree(squareA[3], squareD[0])) )
+                                    if   (checkEdge(squareA[0], squareE[0])) 
+                                    {
+                                        //console.log("A1: " + getBitRow(squareA[1]) + " B0: " + getBitRow(squareB[0]) + " = " + checkEdge(squareA[1], squareB[0]) );
+                                      if   (checkEdge(squareA[1], squareB[0])) 
+                                      {
+                                          //console.log("A2: " + getBitRow(squareA[2]) + " C0: " + getBitRow(squareC[0]) + " = " + checkEdge(squareA[2], squareC[0]) );
+                                        if   (checkEdge(squareA[2], squareC[0])) 
+                                        {
+                                            //console.log("A3: " + getBitRow(squareA[3]) + " D0: " + getBitRow(squareD[0]) + " = " + checkEdge(squareA[3], squareD[0]) );
+                                          if (checkEdge(squareA[3], squareD[0]))
                                     {
                                       //check if the corner0 has exactly one of the three possible fields from the three squares
+//end=true;
                                     
                                       cornerA0 = 0;
                                       if ( squareA[2] % 2 == 1 ) cornerA0++;
@@ -189,12 +195,11 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                   if (end) break;
                                     
                                                   squareF = rotateSquare(flippedSquareF, n3);
-                                                  if ( (checkEdgeTree(squareF[0], squareC[2])) &&
-                                                       (checkEdgeTree(squareF[1], squareB[2])) &&
-                                                       (checkEdgeTree(squareF[2], squareE[2])) &&
-                                                       (checkEdgeTree(squareF[3], squareD[2])) )
+                                                  if ( (checkEdge(squareF[0], squareC[2])) &&
+                                                       (checkEdge(squareF[1], squareB[2])) &&
+                                                       (checkEdge(squareF[2], squareE[2])) &&
+                                                       (checkEdge(squareF[3], squareD[2])) )
                                                   {
-                                                    console.log("F: " + getBitRow(squareF[0]) + " " + getBitRow(squareC[2]));
                                                   //check if the corner0 has exactly one of the three possible fields from the three squares
                                                     cornerF0 = 0;
                                                     if (squareF[0] % 2 == 1) cornerF0++;
@@ -252,12 +257,17 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
       }
     }
   }
+  }}}
 
   if (!end)
   {
     openModal("noSolution");
     return false;  //TODO: check A and B edge  //TODO: count solutions
   }
+
+
+  show("solution");
+
   //TODO: count solutions
   drawSquare(cube, squareB, "B", squareBsymbol);
   drawSquare(cube, squareC, "C", squareCsymbol);
@@ -266,22 +276,21 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
   drawSquare(cube, squareA, "A", squareAsymbol);
   drawSquare(cube, squareF, "F", squareFsymbol);
 
-  show("solution");
 
 }
 
 
-function checkEdgeTree(edgeA, edgeB)
+function checkEdge(edgeA, edgeB)
 {
   for ( var i = 0; i < 5; i++)
   {
     bit1 = getBit(edgeA, i);
     bit2 = getBit(edgeB, 4-i);  //since it is noted clockwise we need to revrse the order
-    if ( (i==0 || i==4) && ((bit1 + bit2) > 1) )
+    if ( (i==0 || i==4) && (bit1 && bit2) )
     {
       return false;
     }
-    if ( (i==1 || i==2 || i==3) && !(bit1==bit2) )
+    if ( (i==1 || i==2 || i==3) && (bit1 == bit2) )
     {
       return false;
     }

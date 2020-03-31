@@ -29,7 +29,7 @@ function toggle(selected, squareNo, x, y)
     var row = selected.data[squareNo][0];
     selected.data[squareNo][0] = toggleKthBit(row, 5-x);
 
-    console.log(selected);
+    //console.log(selected);
   } 
 
   if (y == 4)
@@ -56,16 +56,16 @@ function toggle(selected, squareNo, x, y)
     row = selected.data[squareNo][1];
 
     row = flipRow(row);
-    console.log("row: " + getBitRow(row));
+    //console.log("row: " + getBitRow(row));
 
     row = toggleKthBit(row, 5-y);
-    console.log("row: " + getBitRow(row));
+    //console.log("row: " + getBitRow(row));
 
     row = flipRow(row);
-    console.log("row: " + getBitRow(row));
+    //console.log("row: " + getBitRow(row));
 
     selected.data[squareNo][1] = row;
-    console.log("row: " + getBitRow(row));
+    //console.log("row: " + getBitRow(row));
     
     printBitSquare(selected.data[squareNo]);
 
@@ -76,7 +76,7 @@ function toggle(selected, squareNo, x, y)
     row = selected.data[squareNo][3];
 
     row = toggleKthBit(row, 5-y);
-    console.log("row: " + getBitRow(row));
+    //console.log("row: " + getBitRow(row));
 
     selected.data[squareNo][3] = row;
   }

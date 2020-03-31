@@ -105,12 +105,16 @@ function getBitRow(row)
 
 function printBitSquare(square)
 {
-  console.log("*******************");  //TODO: arrow from lsb horizontal TODO: reverse order 
-  console.log("1 -> " + getBit(square[0], 4) + " " + getBit(square[0], 3) + " " + getBit(square[0], 2) + " " + getBit(square[0], 1) + " " + getBit(square[0], 0) + " <- 0");
+  console.log("the least significant bit is at the arrow");  //TODO: arrow from lsb horizontal TODO: reverse order 
+  console.log("     1");
+  console.log("     v");  
+  console.log("     " + getBit(square[0], 4) + " " + getBit(square[0], 3) + " " + getBit(square[0], 2) + " " + getBit(square[0], 1) + " " + getBit(square[0], 0) + " <- 0");
   console.log("     " + getBit(square[1], 1) + "       " + getBit(square[3], 3));
   console.log("     " + getBit(square[1], 2) + "       " + getBit(square[3], 2));
   console.log("     " + getBit(square[1], 3) + "       " + getBit(square[3], 1));
-  console.log("2 -> " + getBit(square[2], 0)+" " + getBit(square[2], 1) + " " + getBit(square[2], 2)+ " " + getBit(square[2], 3) + " " + getBit(square[2], 4) + " <- 3");
+  console.log("2 -> " + getBit(square[2], 0)+" " + getBit(square[2], 1) + " " + getBit(square[2], 2)+ " " + getBit(square[2], 3) + " " + getBit(square[2], 4));
+  console.log("             ^");
+  console.log("             3");
 
 }
 
