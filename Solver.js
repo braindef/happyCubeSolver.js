@@ -194,6 +194,7 @@ var squareF = [ 0b0, 0b0, 0b0, 0b0 ];
                                                        (checkEdgeTree(squareF[2], squareE[2])) &&
                                                        (checkEdgeTree(squareF[3], squareD[2])) )
                                                   {
+                                                    console.log("F: " + getBitRow(squareF[0]) + " " + getBitRow(squareC[2]));
                                                   //check if the corner0 has exactly one of the three possible fields from the three squares
                                                     cornerF0 = 0;
                                                     if (squareF[0] % 2 == 1) cornerF0++;
@@ -276,14 +277,15 @@ function checkEdgeTree(edgeA, edgeB)
   {
     bit1 = getBit(edgeA, i);
     bit2 = getBit(edgeB, 4-i);  //since it is noted clockwise we need to revrse the order
-    if ( (i==0 || i==4) && (bit1 + bit2) > 1 )
+    if ( (i==0 || i==4) && ((bit1 + bit2) > 1) )
     {
       return false;
     }
-    if ( (i==1 || i==2 || i==3) && !((bit1 + bit2) >= 1) )
+    if ( (i==1 || i==2 || i==3) && !(bit1==bit2) )
     {
       return false;
     }
+    //console.log("bit1: " + bit1 + " bit2: " + bit2);
   }
   return true;
 }
