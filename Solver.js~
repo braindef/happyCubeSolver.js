@@ -275,13 +275,6 @@ function solveCube(cube)
   drawSquare(cube, squareE, "E", squareEsymbol);
   drawSquare(cube, squareA, "A", squareAsymbol);
   drawSquare(cube, squareF, "F", squareFsymbol);
-  
-  console.log(squareB);
-  console.log(squareC);
-  console.log(squareD);
-  console.log(squareE);
-  console.log(squareA);
-  console.log(squareF);
 
 
 }

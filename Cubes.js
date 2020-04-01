@@ -294,7 +294,7 @@ class Transport {
   [ 0b00100, 0b00100, 0b01010, 0b01010 ] ];
   }
 }
-               
+
 class Shapes {
   constructor() 
   {
@@ -316,4 +316,141 @@ class Shapes {
   [ 0b11011, 0b00101, 0b00100, 0b10100 ] ];
   }               
 }
+
+class MarbleBlue {
+  constructor() 
+  {
+    this.name = "MarbleBlue";
+
+    this.outerColor = "#9fcdd9";
+    this.innerColor = "#9ac6d1";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 0b00010, 0b00110, 0b00100, 0b00100 ],
+  [ 0b01100, 0b00100, 0b01010, 0b01010 ],
+  [ 0b01010, 0b01010, 0b01010, 0b00100 ],
+  [ 0b00101, 0b11000, 0b11011, 0b11001 ],
+  [ 0b00100, 0b11100, 0b00101, 0b00110 ],
+  [ 0b10101, 0b11011, 0b11011, 0b11001 ] ];
+  }
+}
+
+class MarbleGreen {
+  constructor() 
+  {
+    this.name = "Marblegreen";
+
+    this.outerColor = "#aaf400";
+    this.innerColor = "#9ae400";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 4, 4, 20, 4  ],
+  [ 10, 26, 5, 10 ],
+  [ 26, 5, 10, 4 ],
+  [ 20, 27, 5, 10 ],
+  [ 26, 27, 5, 4 ],
+  [ 11, 26, 11, 20 ] ];
+  }
+}
+
+class MarblePink {
+  constructor() 
+  {
+    this.name = "MarblePink";
+
+    this.outerColor = "#ffdcef";
+    this.innerColor = "#efccdf";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 4, 10, 28, 4 ],
+  [ 27, 27, 5, 26 ],
+  [ 10, 4, 10, 10 ],
+  [ 7, 4, 4, 20 ],
+  [ 3, 10, 4, 20 ],
+  [ 11, 24, 27, 21 ] ];
+  }
+}
+
+
+class MarbleYellow {
+  constructor() 
+  {
+    this.name = "MarbleYellow";
+
+    this.outerColor = "#fcfcaa";
+    this.innerColor = "#ecec9a";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 0b00100, 0b01100, 0b01100, 0b00100 ],
+  [ 0b01010, 0b00100, 0b00110, 0b00100 ],
+  [ 0b00011, 0b00110, 0b00100, 0b11010 ],
+  [ 0b00101, 0b11000, 0b11011, 0b11011 ],
+  [ 0b01010, 0b11100, 0b00011, 0b00100 ],
+  [ 0b11011, 0b01011, 0b11000, 0b10011 ] ];
+  }               
+}
+
+
+class MarbleRed {
+  constructor() 
+  {
+    this.name = "MarbleRed";
+
+    this.outerColor = "#fa7777";
+    this.innerColor = "#ea6767";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 11, 28, 5, 27 ],
+  [ 12, 4, 28, 5 ],
+  [ 4, 10, 24, 11 ],
+  [ 29, 5, 4, 24 ],
+  [ 8, 4, 24, 11 ],
+  [ 8, 10, 10, 12 ] ];
+  }
+}
+
+
+class MarblePurple {
+  constructor() 
+  {
+    this.name = "MarblePurple";
+
+    this.outerColor = "#ff7cff";
+    this.innerColor = "#ef6cef";
+
+    this.background = "";
+
+    this.symbols = [ "A", "B", "C", "D", "E", "F" ];
+
+    this.data =
+[ [ 10, 10, 8, 3 ],
+  [ 24, 7, 6, 10 ],
+  [ 25, 5, 10, 26 ],
+  [ 12, 4, 28, 5 ],
+  [ 24, 5, 12, 12 ],
+  [ 3, 12, 24, 21 ] ];
+  }
+}
+
+
 
